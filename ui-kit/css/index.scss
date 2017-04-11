@@ -1,0 +1,20 @@
+.rounded-color {
+  @include clearfix();
+  .rounded {
+    float: left;
+  }
+
+  .color-description {
+    float: left;
+    margin-left: $unit;
+
+    .color-name {
+      text-transform: capitalize;
+    }
+
+    .hex {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}

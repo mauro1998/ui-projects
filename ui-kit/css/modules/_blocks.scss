@@ -1,0 +1,14 @@
+.block {
+  margin-bottom: 2*$unit;
+}
+
+.block--ends {
+  margin-top: 2*$unit;
+  margin-bottom: 2*$unit;
+}
+
+.rounded {
+  border-radius: 50%;
+  width: $unit*3;
+  height: $unit*3;
+}

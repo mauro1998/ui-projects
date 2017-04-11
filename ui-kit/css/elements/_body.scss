@@ -1,0 +1,6 @@
+body {
+  @extend %montserrat--regular;
+  line-height: 1.5;
+  color: $color__text;
+  background: $color__white;
+}

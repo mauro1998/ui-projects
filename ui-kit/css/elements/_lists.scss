@@ -1,0 +1,52 @@
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+
+  &.spaced {
+    padding-left: 0;
+    margin-left: 1*$unit;
+    margin-bottom: 1*$unit;
+  }
+  li {
+    line-height: 2;
+    margin-bottom: 5px;
+  }
+}
+
+ol {
+  list-style: none;
+  counter-reset: item;
+
+  li {
+    counter-increment: item;
+  }
+
+  li:before {
+    margin-right: 10px;
+    content: counter(item);
+    border-radius: 100%;
+    color: $color__dark--grey;
+    width: 1.2em;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+ul {
+  li {
+    list-style-type: circle;
+  }
+
+  &.checkbox-list {
+    li {
+      list-style: none;
+    }
+  }
+
+  &.radio-list {
+    li {
+      list-style: none;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.page {
+
+}
+
+.page__header {
+  padding: 1*$unit 0;
+  margin-bottom: 1*$unit;
+  background: rgba(0,0,0,.025);
+  border-bottom: 1px solid $color__grey--light;
+}
+
+.page__footer {
+
+}
+
+section {
+  @include clearfix();
+}

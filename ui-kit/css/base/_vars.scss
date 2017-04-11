@@ -1,0 +1,57 @@
+// Basic colors:
+$color__grey: #b0b3b3;
+$color__body-background: #fafafa;
+$color__grey--soft-light: #cfd2d2;
+$color__grey--light: #cfd2d2;
+$color__offwhite: #f4f4f4;
+$color__white: #fff;
+
+// Theme colors:
+$color__light--green: #69e0a1;
+$color__green: #43cb83;
+$color__dark--green: #2da867;
+
+$color__light--blue: #71cff3;
+$color__blue: #50bae2;
+$color__dark--blue: #3a9ec3;
+
+$color__light--red: #fb9267;
+$color__red: #f57846;
+$color__dark--red: #db6334;
+
+$color__light--orange: #fdcc7e;
+$color__orange: #f9b954;
+$color__dark--orange: #e7a133;
+
+$color__light--violet: #8e8ef3;
+$color__violet: #7070ef;
+$color__dark--violet: #5454cd;
+
+$color__light--black: #515163;
+$color__black: #3f3f4d;
+$color__dark--black: #30303c;
+
+$color__light--grey: #f4f5f9;
+$color__grey: #dde2ef;
+$color__dark--grey: #c0c7da;
+
+$color__text: #576077;
+
+$breakpoints: (
+ n:  0,
+ xs: 20em,
+ sm: 34.375em,
+ md: 48em,
+ lg: 64em,
+ xl: 78.5em,
+ xxl: 100em
+);
+
+$breakpoint__xs: map-get($breakpoints, xs);
+$breakpoint__sm: map-get($breakpoints, sm);
+$breakpoint__md: map-get($breakpoints, md);
+$breakpoint__lg: map-get($breakpoints, lg);
+$breakpoint__xl: map-get($breakpoints, xl);
+$breakpoint__xxl: map-get($breakpoints, xxl);
+
+$unit: 1.125em;
