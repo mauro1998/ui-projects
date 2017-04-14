@@ -49,4 +49,26 @@ ul {
       list-style: none;
     }
   }
+
+  &.todo-list {
+    li {
+      list-style-type: none;
+      padding: $unit;
+      background: $color__light--grey;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-bottom: .8em;
+      border-radius: 4px;
+
+      .checkbox-group, .checkbox-icon {
+        margin-right: .5em;
+      }
+
+      .label--checkbox {
+        display: inline;
+        font-weight: 500;
+      }
+    }
+  }
 }
