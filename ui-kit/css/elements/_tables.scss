@@ -1,126 +1,118 @@
-/**
-
-  @tables
----------------------------------------------------------
-  elements/_tables.scss
---------------------------------------------------------
-
-  Base styling for tables
-
---------------------------------------------------------- */
-
-
-/* @table
---------------------------------------------------------
-  Base table styling
-
-  Example: Table
-  <table>
-    <thead>
-      <tr>
-        <th>Heading</th>
-        <th>Heading</th>
-        <th>Heading</th>
-        <th>Heading</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-      </tr>
-      <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-      </tr>
-      <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-      </tr>
-      <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-      </tr>
-    </tbody>
-  </table>
-
------------------------------------------------------- */
-
-
 table {
   width: 100%;
   border-collapse: collapse;
   border: none;
 }
-th {
-  // Add custom styles below...
 
+thead {
+  background-color: $color__light--grey;
+  th:first-child{
+    border-radius: 4px 0px 0px 0px;
+  }
+  th:last-child {
+    border-radius: 0px 4px 0px 0px;
+  }
+  tr{
+    border-bottom: 2px solid $color__grey;
+  }
 }
+
+th {
+  text-align: left;
+  padding: $unit;
+  color: $color__dark--grey;
+  font-weight: 500;
+
+  span.icon {
+    font-size: 1.4em;
+  }
+}
+
+tbody {
+  tr {
+    border-bottom: 2px solid $color__light--grey;
+    &:hover{
+      background-color: $color__light--grey;
+      border-bottom: 2px solid $color__grey;
+      opacity: .9;
+    }
+  }
+}
+
 th,
 td {
-  // Add custom styles below...
-
+  padding: $unit;
+  p {
+    margin: 0;
+  }
+  &.ellipsis {
+    max-width: 0;
+    .paragraph {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+    }
+  }
+  &.text-right {
+    text-align: right;
+  }
 }
 
+// Bordered tables
+.table--bordered {
+  thead {
+    tr {
+      border: 1px solid $color__grey;
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid $color__grey;
+    }
+  }
 
+  td {
+    border-left: 1px solid $color__grey;
+    border-right: 1px solid $color__grey;
 
-
-
-/* @table--striped
---------------------------------------------------------
-  Striped tables
-
-  Example: Table, striped
-  <table class="table--striped">
-    <thead>
-      <tr>
-        <th>Heading</th>
-        <th>Heading</th>
-        <th>Heading</th>
-        <th>Heading</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-      </tr>
-      <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-      </tr>
-      <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-      </tr>
-      <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-      </tr>
-    </tbody>
-  </table>
-
------------------------------------------------------- */
+    &:hover {
+      border-width: 1px;
+    }
+  }
+}
 
 // Striped tables
 .table--striped {
-  tbody tr:nth-of-type(odd){
-    background-color: #eee;  // Or whatever color you want
+  thead {
+    background-color: $color__black;
+
+    tr {
+      border: none;
+    }
+
+    th {
+      color: $color__white;
+
+      .checkbox-group, .checkbox-icon {
+        input {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: $color__light--grey;
+    &:hover {
+      background-color: $color__grey;
+    }
+  }
+
+  tbody tr {
+    border: none;
+    &:hover {
+      background-color: $color__grey;
+    }
   }
 }

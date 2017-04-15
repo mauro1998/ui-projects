@@ -1,54 +1,34 @@
-/**
-
-  @quotes
---------------------------------------------------------
-  elements/_quotes.scss
---------------------------------------------------------
-
-  Blockquotes and pull quotes
-
------------------------------------------------------  */
-
-
-
-
-
-/* @blockquote
---------------------------------------------------------
-
-  Example:
-  <blockquote>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    <cite><a href="http://foo.com">The source</a></cite>
-  </blockquote>
-
--------------------------------------------------------- */
-
 blockquote {
-  // Any custom styles below...
+  position: relative;
+  background-color: $color__light--grey;
+  padding: $unit;
+  border-radius: 4px;
+  @include clearfix();
+
+  .picture {
+    width: 5em;
+    height: 5em;
+    border-radius: 4px;
+    background-size: cover;
+    float: left;
+
+    &.centered {
+      float: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  .quote {
+    position: relative;
+    margin-left: 6em;
+    header {
+      display: block;
+      margin-bottom: .5em;
+      font-size: $unit;
+    }
+  }
 }
-
-
-
-
-
-
-/* @pull-quote
---------------------------------------------------------
-
-  Large quotes pulled from body text.
-
-  Example:
-  <blockquote class="pull-quote">
-    <p>This is an awesome pull quote!</p>
-  </blockquote>
-
--------------------------------------------------------- */
-
-.pull-quote {
-  // Any custom styles below...
-}
-
-
-
-

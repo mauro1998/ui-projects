@@ -1,0 +1,34 @@
+.popup {
+  position: relative;
+  padding: $unit;
+  background: $color__light--grey;
+  border-radius: 4px;
+
+  p {
+    margin: 0;
+  }
+
+  .btn__close {
+    cursor: pointer;
+    float: right;
+    opacity: .5;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    text-decoration: none;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &.popup--centered {
+    text-align: center;
+  }
+
+  .buttons {
+    margin-top: 1em;
+
+    &.align-right {
+      text-align: right;
+    }
+  }
+}

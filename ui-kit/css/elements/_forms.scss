@@ -105,8 +105,8 @@ input[type=radio] {
   span {
     position: absolute;
     border-radius: 50%;
-    width: 50%;
-    height: 46%;
+    width: 7px;
+    height: 8px;
     top: 0;
     left: 0;
     right: 0;
@@ -294,7 +294,7 @@ Example: label
 
 label {
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 

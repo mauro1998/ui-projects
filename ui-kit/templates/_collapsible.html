@@ -1,0 +1,170 @@
+<section>
+  <div class="block">
+    <h2>Collapsible items</h2>
+  </div>
+
+  <div class="gw">
+    <div class="g sm-one-half">
+      <div class="collapsible">
+        <header class="bg-blue color-white">
+          <label>Toggle table</label>
+          <button type="button" class="toggle">
+            <span class="fa fa-plus color-white"></span>
+            <span class="fa fa-minus color-white"></span>
+          </button>
+        </header>
+        <div class="content">
+          <table class="table--bordered">
+            <thead>
+              <tr>
+                <th width="10%">ID</th>
+                <th>Name</th>
+                <th width="20%">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><label>Lorem ipsum dolor.</label></td>
+                <td>65</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><label>Sit amet consectetur.</label></td>
+                <td>56</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><label>Adipisicing elit quae.</label></td>
+                <td>12</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="g sm-one-half">
+      <div class="collapsible">
+        <header class="bg-green color-white">
+          <label>Toggle to-do list</label>
+          <button type="button" class="toggle">
+            <span class="fa fa-plus color-white"></span>
+            <span class="fa fa-minus color-white"></span>
+          </button>
+        </header>
+        <div class="content">
+
+          <ul class="todo-list">
+            <li>
+              <label for="checkbox7554653" class="checkbox-group">
+                <input type="checkbox" id="checkbox7554653" checked="checked">
+                <span></span>
+              </label>
+              <label for="checkbox746562" class="checkbox-icon">
+                <input type="checkbox" id="checkbox746562" checked="checked">
+                <div class="icons">
+                  <span class="fa fa-star color-dark--grey"></span>
+                  <span class="fa fa-star color-orange"></span>
+                </div>
+              </label>
+              <label for="checkbox7554653" class="label--checkbox">
+                Lorem ipsum dolor sit amet
+              </label>
+            </li>
+            <li>
+              <label for="checkbox3266543" class="checkbox-group">
+                <input type="checkbox" id="checkbox3266543" checked="checked">
+                <span></span>
+              </label>
+              <label for="checkbox56573" class="checkbox-icon">
+                <input type="checkbox" id="checkbox56573">
+                <div class="icons">
+                  <span class="fa fa-star color-dark--grey"></span>
+                  <span class="fa fa-star color-orange"></span>
+                </div>
+              </label>
+              <label for="checkbox3266543" class="label--checkbox">
+                Lorem ipsum dolor sit amet
+              </label>
+            </li>
+            <li>
+              <label for="checkbox6578" class="checkbox-group">
+                <input type="checkbox" id="checkbox6578">
+                <span></span>
+              </label>
+              <label for="checkbox4356" class="checkbox-icon">
+                <input type="checkbox" id="checkbox4356" checked="checked">
+                <div class="icons">
+                  <span class="fa fa-star color-dark--grey"></span>
+                  <span class="fa fa-star color-orange"></span>
+                </div>
+              </label>
+              <label for="checkbox6578" class="label--checkbox">
+                Lorem ipsum dolor sit amet
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="g">
+      <div class="collapsible">
+        <header>
+          <label>Toggle text</label>
+          <button type="button" class="toggle">
+            <span class="fa fa-plus"></span>
+            <span class="fa fa-minus"></span>
+          </button>
+        </header>
+        <div class="content">
+          <div class="gw">
+            <div class="g sm-one-half">
+              <article>
+                <h3>Header 1</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste accusantium aperiam repudiandae, doloribus aliquid quia odio recusandae, unde, expedita hic fuga velit quo modi cumque. Repudiandae deserunt fuga velit.
+                </p>
+              </article>
+            </div>
+
+            <div class="g sm-one-half">
+              <article>
+                <h3>Header 2</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste accusantium aperiam repudiandae, doloribus aliquid quia odio recusandae, unde, expedita hic fuga velit quo modi cumque. Repudiandae deserunt fuga velit.
+                </p>
+              </article>
+            </div>
+
+            <div class="g">
+              <article>
+                <h3>Header 3</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste accusantium aperiam repudiandae, doloribus aliquid quia odio recusandae, unde, expedita hic fuga velit quo modi cumque. Repudiandae deserunt fuga velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis blanditiis et possimus consequatur obcaecati numquam consectetur, dolore ducimus earum. Cupiditate sit nesciunt iste quod saepe molestiae quaerat, inventore unde blanditiis.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste accusantium aperiam repudiandae, doloribus aliquid quia odio recusandae, unde, expedita hic fuga velit quo modi cumque. Repudiandae deserunt fuga velit.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('.collapsible').on('click', 'button.toggle', function() {
+        $btn = $(this);
+        $btn.toggleClass('toggled');
+        _this = $btn.parent().parent();
+        $content = _this.find('.content');
+        if ($content.css('display') === 'none') return $content.slideDown('fast');
+        return $content.slideUp('fast');
+      });
+    });
+  </script>
+</section>

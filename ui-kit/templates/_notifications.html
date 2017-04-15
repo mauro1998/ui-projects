@@ -1,0 +1,65 @@
+<section>
+  <div class="block">
+    <h2>Notifications</h2>
+  </div>
+
+  <div class="alert alert--error block">
+    <a class="btn__close"><span class="fa fa-times"></span></a>
+    <header><label>Oh snap!</label></header>
+    <p>Something went wrong</p>
+  </div>
+
+  <div class="alert alert--warning block">
+    <a class="btn__close"><span class="fa fa-times"></span></a>
+    <header><label>Warning!</label></header>
+    <p>Shake it fast, but watch yourself.</p>
+  </div>
+
+  <div class="alert alert--success block">
+    <a class="btn__close"><span class="fa fa-times"></span></a>
+    <header><label>Success!</label></header>
+    <p>The secret to my success is that I learn, 25 hours a day!</p>
+  </div>
+
+  <div class="alert alert--info block">
+    <a class="btn__close"><span class="fa fa-times"></span></a>
+    <header><label>Hey!</label></header>
+    <p>Did you ever know that you're my hero?</p>
+  </div>
+
+  <div class="alert weak alert--error block">
+    <a class="btn__close"><span class="fa fa-times"></span></a>
+    <header><label>Oh snap!</label></header>
+    <p>Uh oh - something went wrong</p>
+  </div>
+
+  <div class="alert weak alert--warning block">
+    <a class="btn__close"><span class="fa fa-times"></span></a>
+    <header><label>Warning!</label></header>
+    <p>Shake it fast, but watch yourself.</p>
+  </div>
+
+  <div class="alert weak alert--success block">
+    <a class="btn__close"><span class="fa fa-times"></span></a>
+    <header><label>Success!</label></header>
+    <p>The secret to my success is that I learn, 25 hours a day!</p>
+  </div>
+
+  <div class="alert weak alert--info block">
+    <a class="btn__close"><span class="fa fa-times"></span></a>
+    <header><label>Hey!</label></header>
+    <p>Did you ever know that you're my hero?</p>
+  </div>
+
+  <script>
+  $(document).ready(function() {
+    $('.alert').on('click', 'a.btn__close', function(e) {
+      e.preventDefault();
+      _this = $(this).parent();
+      _this.fadeOut('fast', function() {
+        _this.remove();
+      });
+    });
+  });
+  </script>
+</section>

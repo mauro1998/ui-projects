@@ -1,0 +1,82 @@
+<section>
+  <div class="block">
+    <h2>Popups</h2>
+  </div>
+
+  <div class="block">
+    <div class="gw">
+      <div class="g sm-one-half">
+        <div class="popup">
+          <a class="btn__close"><span class="fa fa-times"></span></a>
+          <header><h2>Header popup</h2></header>
+          <p>
+            You succesfully read this important pop-up. <br>You are great.
+          </p>
+          <div class="buttons align-right">
+            <button class="btn btn--inline">Great</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="g sm-one-half">
+        <div class="popup popup--centered bg-black">
+          <a class="btn__close"><span class="fa fa-times color-white"></span></a>
+          <header class="color-white"><h2>Header popup</h2></header>
+          <p class="color-dark--grey">
+            You succesfully read this important pop-up. <br>You are great.
+          </p>
+          <div class="buttons">
+            <button class="btn btn--inline bg-green">Ok</button>
+            <button class="btn btn--inline bg-light--black">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="g sm-one-half">
+        <div class="popup bg-black">
+          <a class="btn__close"><span class="fa fa-times color-white"></span></a>
+          <p class="color-dark--grey">
+            You succesfully read this important pop-up. <br>You are cool.
+          </p>
+          <div class="buttons align-right">
+            <button class="btn btn--inline bg-orange">Got it</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="g sm-one-half">
+        <div class="popup popup--centered">
+          <a class="btn__close"><span class="fa fa-times"></span></a>
+          <p>
+            You succesfully read this important pop-up. <br>You are great.
+          </p>
+          <div class="buttons">
+            <button class="btn btn--inline bg-blue">Good</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="g">
+        <div class="popup">
+          <a class="btn__close"><span class="fa fa-times"></span></a>
+          <header><h2>Header popup</h2></header>
+          <p>
+            You succesfully read this important pop-up. <br>You are great.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  $(document).ready(function() {
+    $('.popup').on('click', 'a.btn__close', function(e) {
+      e.preventDefault();
+      _this = $(this).parent();
+      _this.fadeOut('fast', function() {
+        _this.remove();
+      });
+    });
+  });
+  </script>
+</section>

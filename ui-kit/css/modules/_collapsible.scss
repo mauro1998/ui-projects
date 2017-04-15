@@ -1,0 +1,45 @@
+.collapsible {
+  border-radius: 4px;
+
+  header {
+    border-radius: 4px 4px 0px 0px;
+    padding: $unit;
+    background-color: $color__light--grey;
+
+    button.toggle {
+      float: right;
+      background: transparent;
+      border: none;
+      color: $color__dark--grey;
+      font-size: 1.4em;
+      cursor: pointer;
+      text-align: center;
+      transition: .3s all ease;
+
+      &:active {
+        opacity: 0.7;
+      }
+
+      span:last-child {
+        display: none;
+      }
+
+      &.toggled {
+        span:first-child {
+          display: none;
+        }
+        span:last-child {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: none;
+    padding: $unit;
+    border: 1px solid $color__grey;
+    border-top: none;
+    border-radius: 0px 0px 4px 4px;
+  }
+}
