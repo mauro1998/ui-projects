@@ -12,16 +12,29 @@
 <body>
 
   <div class="site">
-    <div class="site-header">
-      <div class="container">
-        <div class="block--ends">
-          <h1>UI Kit - Inspirational Design</h1>
-        </div>
-      </div>
-    </div>
-
     <div class="site-main">
       <div class="page">
+        <section>
+  <div class="hero">
+    <div class="hero__main container">
+      <h1 class="hero__leadin">STYLE GUIDE | UI KIT | WEB DESIGN</h1>
+      <h2 class="hero__name">A collection of UI elements and colors for web design</h2>
+      <button id="explore" class="btn btn--inline bg-light--grey color-dark--blue">Explore</button>
+    </div>
+    <div class="hero__media hero__media--entire bg-dark--blue"></div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#explore').click(function() {
+        $('body').animate({
+          scrollTop: $(window).height()
+        }, 500, 'swing');
+      });
+    });
+  </script>
+</section>
+
         <div class="container">
           <section>
   <div class="block--ends">
@@ -1039,11 +1052,189 @@
   </script>
 </section>
 
+          <section>
+  <div class="block">
+    <h2>Buttons</h2>
+  </div>
+
+  <div class="block">
+    <h3>Button styles</h3>
+    <button class="btn btn--light">Light Button</button>
+    <button class="btn btn--light btn--secondary color-black">Light Secondary Button</button>
+    <button class="btn btn--ghost">Light Ghost Button</button>
+    <br>
+    <button class="btn">Regular Button</button>
+    <button class="btn btn--secondary color-black">Secondary Button</button>
+    <button class="btn btn--ghost">Ghost Button</button>
+    <br>
+    <button class="btn btn--bold">Bold Button</button>
+    <button class="btn btn--bold btn--secondary color-black">Bold Secondary Button</button>
+    <button class="btn btn--ghost">Bold Ghost Button</button>
+  </div>
+
+  <div class="block">
+    <h3>Button sizes</h3>
+    <div class="gw sm-two-up">
+      <div class="g">
+        <button class="btn btn--lg">lg button</button>
+        <br>
+        <button class="btn btn--md">md button</button>
+        <br>
+        <button class="btn btn--sm">sm button</button>
+      </div>
+
+      <div class="g">
+        <button class="btn btn--secondary color-black btn--lg">lg button</button>
+        <br>
+        <button class="btn btn--secondary color-black btn--md">md button</button>
+        <br>
+        <button class="btn btn--secondary color-black btn--sm">sm button</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3>Standart buttons</h3>
+    <button class="btn btn--black">Standart</button>
+    <button class="btn btn--black btn--rounded">Rounded</button>
+    <button class="btn btn--black btn--hexagon">Hexagon</button>
+    <button class="btn btn--black btn--rectangle">Rectangle</button>
+    <button class="btn btn--black btn--left">Left</button>
+    <button class="btn btn--black btn--right">Right</button>
+    <button class="btn btn--black btn--circle"><span class="fa fa-chevron-left"></span></button>
+    <button class="btn btn--black btn--circle"><span class="fa fa-chevron-right"></span></button>
+  </div>
+
+  <div class="block">
+    <button class="btn btn--green">Standart</button>
+    <button class="btn btn--green btn--rounded">Rounded</button>
+    <button class="btn btn--green btn--hexagon">Hexagon</button>
+    <button class="btn btn--green btn--rectangle">Rectangle</button>
+    <button class="btn btn--green btn--left">Left</button>
+    <button class="btn btn--green btn--right">Right</button>
+    <button class="btn btn--green btn--circle"><span class="fa fa-chevron-left"></span></button>
+    <button class="btn btn--green btn--circle"><span class="fa fa-chevron-right"></span></button>
+  </div>
+
+  <div class="block">
+    <button class="btn btn--blue">Standart</button>
+    <button class="btn btn--blue btn--rounded">Rounded</button>
+    <button class="btn btn--blue btn--hexagon">Hexagon</button>
+    <button class="btn btn--blue btn--rectangle">Rectangle</button>
+    <button class="btn btn--blue btn--left">Left</button>
+    <button class="btn btn--blue btn--right">Right</button>
+    <button class="btn btn--blue btn--circle"><span class="fa fa-chevron-left"></span></button>
+    <button class="btn btn--blue btn--circle"><span class="fa fa-chevron-right"></span></button>
+  </div>
+
+  <div class="block">
+    <button class="btn btn--red">Standart</button>
+    <button class="btn btn--red btn--rounded">Rounded</button>
+    <button class="btn btn--red btn--hexagon">Hexagon</button>
+    <button class="btn btn--red btn--rectangle">Rectangle</button>
+    <button class="btn btn--red btn--left">Left</button>
+    <button class="btn btn--red btn--right">Right</button>
+    <button class="btn btn--red btn--circle"><span class="fa fa-chevron-left"></span></button>
+    <button class="btn btn--red btn--circle"><span class="fa fa-chevron-right"></span></button>
+  </div>
+
+  <div class="block">
+    <button class="btn btn--orange">Standart</button>
+    <button class="btn btn--orange btn--rounded">Rounded</button>
+    <button class="btn btn--orange btn--hexagon">Hexagon</button>
+    <button class="btn btn--orange btn--rectangle">Rectangle</button>
+    <button class="btn btn--orange btn--left">Left</button>
+    <button class="btn btn--orange btn--right">Right</button>
+    <button class="btn btn--orange btn--circle"><span class="fa fa-chevron-left"></span></button>
+    <button class="btn btn--orange btn--circle"><span class="fa fa-chevron-right"></span></button>
+  </div>
+
+  <div class="block">
+    <button class="btn btn--violet">Standart</button>
+    <button class="btn btn--violet btn--rounded">Rounded</button>
+    <button class="btn btn--violet btn--hexagon">Hexagon</button>
+    <button class="btn btn--violet btn--rectangle">Rectangle</button>
+    <button class="btn btn--violet btn--left">Left</button>
+    <button class="btn btn--violet btn--right">Right</button>
+    <button class="btn btn--violet btn--circle"><span class="fa fa-chevron-left"></span></button>
+    <button class="btn btn--violet btn--circle"><span class="fa fa-chevron-right"></span></button>
+  </div>
+
+  <div class="block">
+    <button class="btn btn--grey">Standart</button>
+    <button class="btn btn--grey btn--rounded">Rounded</button>
+    <button class="btn btn--grey btn--hexagon">Hexagon</button>
+    <button class="btn btn--grey btn--rectangle">Rectangle</button>
+    <button class="btn btn--grey btn--left">Left</button>
+    <button class="btn btn--grey btn--right">Right</button>
+    <button class="btn btn--grey btn--circle"><span class="fa fa-chevron-left"></span></button>
+    <button class="btn btn--grey btn--circle"><span class="fa fa-chevron-right"></span></button>
+  </div>
+</section>
+
           
           
           
-          
-          
+          <section>
+  <div class="block">
+    <h2>Labels</h2>
+  </div>
+
+  <div>
+    <h3>Squared label (Default)</h3>
+
+    <div class="block">
+      <label class="label bg-green color-white">Green</label>
+      <label class="label bg-blue color-white">Blue</label>
+      <label class="label bg-orange color-white">Orange</label>
+      <label class="label bg-violet color-white">Violet</label>
+      <label class="label bg-grey">Grey</label>
+      <label class="label bg-red color-white">Red</label>
+      <label class="label bg-black color-white">Dark</label>
+      <label class="label">Default</label>
+    </div>
+
+    <h3>Tag label</h3>
+
+    <div class="block">
+      <label class="label label--tag bg-green color-white">Green</label>
+      <label class="label label--tag bg-blue color-white">Blue</label>
+      <label class="label label--tag bg-orange color-white">Orange</label>
+      <label class="label label--tag bg-violet color-white">Violet</label>
+      <label class="label label--tag bg-grey">Grey</label>
+      <label class="label label--tag bg-red color-white">Red</label>
+      <label class="label label--tag bg-black color-white">Dark</label>
+      <label class="label label--tag">Default</label>
+      <br>
+      <label class="label label--tag label--tag-left bg-green color-white">Green</label>
+      <label class="label label--tag label--tag-left bg-blue color-white">Blue</label>
+      <label class="label label--tag label--tag-left bg-orange color-white">Orange</label>
+      <label class="label label--tag label--tag-left bg-violet color-white">Violet</label>
+      <label class="label label--tag label--tag-left bg-grey">Grey</label>
+      <label class="label label--tag label--tag-left bg-red color-white">Red</label>
+      <label class="label label--tag label--tag-left bg-black color-white">Dark</label>
+      <label class="label label--tag label--tag-left">Default</label>
+    </div>
+
+    <h3>Rounded label</h3>
+
+    <div class="block">
+      <label class="label label--rounded bg-green color-white">Green</label>
+      <label class="label label--rounded bg-blue color-white">Blue</label>
+      <label class="label label--rounded bg-orange color-white">Orange</label>
+      <label class="label label--rounded bg-violet color-white">Violet</label>
+      <label class="label label--rounded bg-grey">Grey</label>
+      <label class="label label--rounded bg-red color-white">Red</label>
+      <label class="label label--rounded bg-black color-white">Dark</label>
+      <label class="label label--rounded">Default</label>
+
+      <label class="label label--rounded label--circle bg-black color-white">1</label>
+      <label class="label label--rounded label--circle bg-black color-white">2</label>
+      <label class="label label--rounded label--circle bg-black color-white">3</label>
+    </div>
+  </div>
+</section>
+
           <section>
   <div class="block">
     <h2>Notifications</h2>
@@ -1125,7 +1316,7 @@
             You succesfully read this important pop-up. <br>You are great.
           </p>
           <div class="buttons align-right">
-            <button class="btn btn--inline">Great</button>
+            <button class="btn btn--inline btn--black">Great</button>
           </div>
         </div>
       </div>
@@ -1138,7 +1329,7 @@
             You succesfully read this important pop-up. <br>You are great.
           </p>
           <div class="buttons">
-            <button class="btn btn--inline bg-green">Ok</button>
+            <button class="btn btn--inline btn--green">Ok</button>
             <button class="btn btn--inline bg-light--black">Cancel</button>
           </div>
         </div>
@@ -1151,7 +1342,7 @@
             You succesfully read this important pop-up. <br>You are cool.
           </p>
           <div class="buttons align-right">
-            <button class="btn btn--inline bg-orange">Got it</button>
+            <button class="btn btn--inline btn--orange">Got it</button>
           </div>
         </div>
       </div>
@@ -1163,7 +1354,7 @@
             You succesfully read this important pop-up. <br>You are great.
           </p>
           <div class="buttons">
-            <button class="btn btn--inline bg-blue">Good</button>
+            <button class="btn btn--inline btn--blue">Good</button>
           </div>
         </div>
       </div>

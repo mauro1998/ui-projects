@@ -1,0 +1,113 @@
+.label {
+  position: relative;
+  display: inline-block;
+  background-color: $color__light--grey;
+  text-transform: uppercase;
+  font-size: .8em;
+  padding: .5em 1em;
+  border-radius: 4px;
+  margin-bottom: .5em;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.label--tag {
+  margin-right: 1em;
+  border-radius: 4px 0px 0px 4px;
+
+  &.bg-green::after {
+    border-left-color: $color__green;
+  }
+
+  &.bg-blue::after {
+    border-left-color: $color__blue;
+  }
+
+  &.bg-orange::after {
+    border-left-color: $color__orange;
+  }
+
+  &.bg-violet::after {
+    border-left-color: $color__violet;
+  }
+
+  &.bg-grey::after {
+    border-left-color: $color__grey;
+  }
+
+  &.bg-red::after {
+    border-left-color: $color__red;
+  }
+
+  &.bg-black::after {
+    border-left-color: $color__black;
+  }
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: .8em solid;
+    border-bottom: 1.3em solid;
+    border-top: 1.3em solid;
+    border-right: none;
+    border-left-color: $color__light--grey;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    color: transparent;
+  }
+
+  &.label--tag-left {
+    border-radius: 0px 4px 4px 0px;
+    margin-left: 1em;
+    margin-right: auto;
+    &::after {
+      border-right: .8em solid;
+      border-left: none;
+      right: 100%;
+      left: auto;
+      border-right-color: $color__light--grey;
+    }
+
+    &.bg-green::after {
+      border-left-color: transparent;
+      border-right-color: $color__green;
+    }
+    &.bg-blue::after {
+      border-left-color: transparent;
+      border-right-color: $color__blue;
+    }
+    &.bg-orange::after {
+      border-left-color: transparent;
+      border-right-color: $color__orange;
+    }
+    &.bg-violet::after {
+      border-left-color: transparent;
+      border-right-color: $color__violet;
+    }
+    &.bg-grey::after {
+      border-left-color: transparent;
+      border-right-color: $color__grey;
+    }
+    &.bg-red::after {
+      border-left-color: transparent;
+      border-right-color: $color__red;
+    }
+    &.bg-black::after {
+      border-left-color: transparent;
+      border-right-color: $color__black;
+    }
+  }
+}
+
+.label--rounded {
+  border-radius: 25px;
+
+  &.label--circle {
+    border-radius: 50%;
+  }
+}

@@ -1,33 +1,8 @@
-/**
-
-  @buttons
---------------------------------------------------------
-  elements/_buttons.scss
---------------------------------------------------------
-
-  Buttons are a common UI component in sites/apps.  They
-  are usually either anchor, button, or input elements
-  with a classname of 'btn'.  They provide an easily
-  identified clickable target.
-
-  Buttons commonly have modifying classes that apply
-  specific styles.  Examples of these are .btn--large and
-  .btn--inline
-
-  Example: Buttons using anchors
-  <p><a href="#" class="btn">Regular Button</a></p>
-
-  Example: Buttons using buttons
-  <p><button class="btn">Regular Button</button></p>
-
------------------------------------------------------- */
-
 button {
   &:focus,
   &:active {
     outline: none;
     box-shadow: none;
-    border: none;
   }
 }
 
@@ -39,100 +14,299 @@ button {
   background: $color__black;
   color: $color__white;
   border: none;
-  @extend %sans--regular;
-  font-size: 1.25em;
+  @extend %montserrat--regular;
+  font-size: 1em;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: .225em;
+  letter-spacing: .025em;
   padding: 1em 1.25em;
+  line-height: .8rem;
+  vertical-align: baseline;
+  cursor: pointer;
+  margin-bottom: .2em;
+  border-radius: 4px;
+  transition: .3s all ease;
   &:hover,
-  &:focus,
   &:active {
     outline: none;
-    opacity: .85;
+  }
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &:active {
+    background-color: $color__dark--black;
+    opacity: 1;
+  }
+
+  &.btn--green {
+    background: $color__green;
+    &:hover {
+      background-color: $color__light--green;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__light--green;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &:active {
+      background-color: $color__dark--green;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__dark--green;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &::before, &::after {
+      border-color: $color__green;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      transition: .3s all ease;
+    }
+  }
+
+  &.btn--blue {
+    background: $color__blue;
+    &:hover {
+      background-color: $color__light--blue;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__light--blue;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &:active {
+      background-color: $color__dark--blue;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__dark--blue;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &::before, &::after {
+      border-color: $color__blue;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      transition: .3s all ease;
+    }
+  }
+
+  &.btn--orange {
+    background: $color__orange;
+    &:hover {
+      background-color: $color__light--orange;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__light--orange;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &:active {
+      background-color: $color__dark--orange;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__dark--orange;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &::before, &::after {
+      border-color: $color__orange;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      transition: .3s all ease;
+    }
+  }
+
+  &.btn--violet {
+    background: $color__violet;
+    &:hover {
+      background-color: $color__light--violet;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__light--violet;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &:active {
+      background-color: $color__dark--violet;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__dark--violet;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &::before, &::after {
+      border-color: $color__violet;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      transition: .3s all ease;
+    }
+  }
+
+  &.btn--grey {
+    background: $color__grey;
+    color: $color__text;
+    &:hover {
+      background-color: $color__light--grey;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__light--grey;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &:active {
+      background-color: $color__dark--grey;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__dark--grey;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &::before, &::after {
+      border-color: $color__grey;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      transition: .3s all ease;
+    }
+  }
+
+  &.btn--red {
+    background: $color__red;
+    &:hover {
+      background-color: $color__light--red;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__light--red;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &:active {
+      background-color: $color__dark--red;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__dark--red;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &::before, &::after {
+      border-color: $color__red;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      transition: .3s all ease;
+    }
+  }
+
+  &.btn--black {
+    background: $color__black;
+    &:hover {
+      background-color: $color__light--black;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__light--black;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &:active {
+      background-color: $color__dark--black;
+      opacity: 1;
+
+      &::before, &::after {
+        border-color: $color__dark--black;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+    &::before, &::after {
+      border-color: $color__black;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      transition: .3s all ease;
+    }
+  }
+
+  &.btn--ghost {
+    background: $color__white;
+    color: $color__text;
+    border: 2px solid $color__grey;
+
+    &:active {
+      background-color: $color__grey;
+      opacity: 1;
+    }
   }
 }
 
+.btn--light {
+  font-weight: lighter;
+}
 
-
-
-
-/* @btn--secondary
---------------------------------------------------------
-
-  A btn modifier, secondary
-
-  Example: .btn--secondary
-  <a class="btn btn--secondary">Secondary button</a>
-
------------------------------------------------------- */
+.btn--bold {
+  font-weight: bold;
+  &.btn--secondary {
+    border-width: 2px;
+  }
+}
 
 .btn--secondary {
   background: none;
-  border: 1px solid $color__white;
+  border: 1px solid;
   color: $color__white;
-}
-
-
-
-
-
-/* @btn--large
---------------------------------------------------------
-
-  A btn modifier, large
-
-  Example: .btn--large
-  <a class="btn btn--large">Large button</a>
-
------------------------------------------------------- */
-
-.btn--large {
-  @include bp-at-least($breakpoint__sm) {
-    font-size: 1.25em;
-    padding: 1.25em 2.75em;
+  &:active {
+    background: transparent;
   }
 }
 
+.btn--sm {
+  @include bp-at-least($breakpoint__sm) {
+    font-size: 0.75em;
+    padding: 0.75em;
+  }
+}
 
+.btn--md {
+  @include bp-at-least($breakpoint__sm) {
+    font-size: 1em;
+    padding: 1em;
+  }
+}
 
-
-
-/* @btn--inline
---------------------------------------------------------
-
-  A btn modifier, if this button is in a paragraph or
-  in anything else that has a defined font-size, this
-  modifier will make the btn inherit the font-size of
-  the partent.
-
-  Example: .btn--inline
-  <p>Here's some text <a class="btn btn--inline">Cool button</a> text keeps going</p>
-
------------------------------------------------------- */
+.btn--lg {
+  @include bp-at-least($breakpoint__sm) {
+    font-size: 1.25em;
+    padding: 1.25em;
+  }
+}
 
 .btn--inline {
   font-size: 1em;
 }
-
-
-
-
-
-/* @btn--block
---------------------------------------------------------
-
-  A btn modifier - makes the button display block, 100%
-  width and aligns the text to the center.  Removes left
-  and right padding since the text is center aligned, it
-  is not needed.  Actually sometimes having the padding
-  on the left and right causes problems if the centered
-  text is quite long - so we just remove it.
-
-  Example: .btn--block
-  <a href="#" class="btn btn--block">Block button</a>
-
------------------------------------------------------- */
 
 .btn--block {
   display: block;
@@ -142,25 +316,6 @@ button {
   padding-left: 0;
 }
 
-
-
-
-
-/* @btn--icon
---------------------------------------------------------
-
-  A btn modifier - makes the button display block, 100%
-  width and aligns the text to the center.  Removes left
-  and right padding since the text is center aligned, it
-  is not needed.  Actually sometimes having the padding
-  on the left and right causes problems if the centered
-  text is quite long - so we just remove it.
-
-  Example: .btn--icon
-  <button class="btn--icon ss-icon">Block button</button>
-
------------------------------------------------------- */
-
 .btn--icon {
   background: transparent;
   border: none;
@@ -168,3 +323,81 @@ button {
   font-size: 1em;
 }
 
+.btn--rounded {
+  border-radius: 5em;
+}
+
+.btn--circle {
+  border-radius: 50%;
+}
+
+.btn--hexagon {
+  margin-left: 1em;
+  margin-right: 1em;
+  position: relative;
+  border-radius: 0px;
+
+  &::after, &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 1.4em solid transparent;
+    border-bottom: 1.4em solid transparent;
+  }
+
+  &::after {
+    border-left: 1em solid;
+    border-left-color: $color__black;
+    left: 100%;
+  }
+
+  &::before {
+    border-right: 1em solid;
+    border-right-color: $color__black;
+    right: 100%;
+  }
+}
+
+.btn--rectangle {
+  border-radius: 0px;
+}
+
+.btn--left {
+  margin-left: 1em;
+  position: relative;
+  border-radius: 0px 4px 4px 0px;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 1.4em solid transparent;
+    border-bottom: 1.4em solid transparent;
+    border-right: 1em solid;
+    border-right-color: $color__black;
+    right: 100%;
+  }
+}
+
+.btn--right {
+  margin-right: 1em;
+  position: relative;
+  border-radius: 4px 0px 0px 4px;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 1.4em solid transparent;
+    border-bottom: 1.4em solid transparent;
+    border-left: 1em solid;
+    border-left-color: $color__black;
+    left: 100%;
+  }
+}

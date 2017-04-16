@@ -1,0 +1,20 @@
+<section>
+  <div class="hero">
+    <div class="hero__main container">
+      <h1 class="hero__leadin">STYLE GUIDE | UI KIT | WEB DESIGN</h1>
+      <h2 class="hero__name">A collection of UI elements and colors for web design</h2>
+      <button id="explore" class="btn btn--inline bg-light--grey color-dark--blue">Explore</button>
+    </div>
+    <div class="hero__media hero__media--entire bg-dark--blue"></div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#explore').click(function() {
+        $('body').animate({
+          scrollTop: $(window).height()
+        }, 500, 'swing');
+      });
+    });
+  </script>
+</section>
