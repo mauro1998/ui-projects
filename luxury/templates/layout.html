@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Luxury</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+</head>
+<body>
+  <div class="site">
+    @@include('_header.html')
+
+    <main class="site-main">
+      <div class="page">
+        <section class="page__header">
+          <div class="container--fluid">
+            <h1>Módulos y Componentes de Ejemplo</h1>
+            <article>
+              <p>Componentes reusables listos para empezar a crear un gran diseño!</p>
+              <p>
+                La página entera se encuentra dentro de un módulo <code>div.page</code>. Creado para hacer páginas básicas con un contenedor <code>div.page</code>, un <code>div.page__header</code> y <code>div.page__footer</code> opcional.
+              </p>
+              <p>
+                Puede que estos componentes usen pequeños bloques de javascript para realizar algunas interacciones básicas con la UI. Sin embargo, pese a que la intención del proyecto es enfocarse en CSS</strong>, sientase libre de usar cualquier framework o librería que desee para realizar interacciones y animaciones más avanzadas.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        @@include('_callouts.html')
+        @@include('_thumbnails.html')
+        @@include('_buttons.html')
+        @@include('_alerts.html')
+        @@include('_modals.html')
+      </div>
+    </main>
+  </div>
+</body>
+</html>

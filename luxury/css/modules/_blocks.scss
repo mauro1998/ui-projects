@@ -1,0 +1,41 @@
+.block {
+  margin-bottom: 2*$unit;
+}
+
+// Block with top and bottom margin
+.block--ends {
+  margin-top: 2*$unit;
+  margin-bottom: 2*$unit;
+}
+
+@for $i from 1 to 4 {
+  .pd-#{$i} {
+    padding: $i*$unit;
+  }
+
+  .pd-#{$i}-l {
+    padding-left: $i*$unit;
+  }
+
+  .pd-#{$i}-r {
+    padding-right: $i*$unit;
+  }
+
+  .pd-#{$i}-lr {
+    padding-left: $i*$unit;
+    padding-right: $i*$unit;
+  }
+
+  .pd-#{$i}-t {
+    padding-top: $i*$unit;
+  }
+
+  .pd-#{$i}-b {
+    padding-bottom: $i*$unit;
+  }
+
+  .pd-#{$i}-tb {
+    padding-top: $i*$unit;
+    padding-bottom: $i*$unit;
+  }
+}

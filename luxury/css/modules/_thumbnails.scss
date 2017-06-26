@@ -1,0 +1,20 @@
+/* @thumbnails */
+.thumbnail {
+  display: block;
+  background: rgba($color__grey--light, .3);
+  text-decoration: none;
+}
+
+.thumbnail__media {
+  margin-bottom: .5*$unit;
+}
+
+.thumbnail__caption {
+  font-size: 85%;
+  padding-left: $unit*0.8;
+  padding-right: $unit*0.8;
+  padding-bottom: $unit*0.5;
+  h1, h2, h3, h4, h5, h5 {
+   margin-bottom: .25*$unit;
+  }
+}

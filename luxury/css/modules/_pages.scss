@@ -1,0 +1,21 @@
+.page {
+  position: relative;
+}
+
+// The header
+.page__header {
+  padding: 1*$unit 0;
+  margin-bottom: 1*$unit;
+  background: rgba(0,0,0,.025);
+}
+
+// The footer
+.page__footer {
+
+}
+
+section {
+  display: block;
+  position: relative;
+  text-align: center;
+}

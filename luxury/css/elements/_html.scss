@@ -1,0 +1,11 @@
+html {
+  font-size: 80%;
+  @include gradual-queries($breakpoint__sm, 80%, $breakpoint__lg, 105%, 5em);
+}
+
+* {
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

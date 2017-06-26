@@ -1,0 +1,57 @@
+$ups__number-of-ups-at-breakpoint: (
+  n:   12,
+  xs:  12,
+  sm:  12,
+  md:  12,
+  lg:  12,
+  xl:  12,
+  xxl: 12
+);
+
+$english-by-number: (
+  1:  "one",
+  2:  "two",
+  3:  "three",
+  4:  "four",
+  5:  "five",
+  6:  "six",
+  7:  "seven",
+  8:  "eight",
+  9:  "nine",
+  10: "ten",
+  11: "eleven",
+  12: "twelve"
+);
+
+@mixin easy-to-read-up($n, $breakpoint:"") {
+  $breakpoint-prefix: ".";
+  @if ($breakpoint != "n") {
+    @if map-has-key($ups__number-of-ups-at-breakpoint, $breakpoint) {
+      $breakpoint-prefix: ".#{unquote($breakpoint)}-";
+    }
+  }
+
+  // Define english and delimiter '-' for first part of class
+  $up-first-part: "#{map-get($english-by-number, $n)}-";
+
+  // Here's the class
+  #{$breakpoint-prefix}#{$up-first-part}up > * { width: (100 / $n)*1%; }
+}
+
+// Loop through all breakpoints in $ups__number-of-ups-at-breakpoint
+@each $breakpoint, $num-ups in $ups__number-of-ups-at-breakpoint {
+  @if ($num-ups > 0) {
+    @if ($breakpoint != "n") {
+      @include bp-at-least ( map-get($breakpoints, $breakpoint) ) {
+        @for $i from 1 through $num-ups {
+          @include easy-to-read-up($i, $breakpoint);
+        }
+      }
+    }
+    @else {
+      @for $i from 1 through $num-ups {
+        @include easy-to-read-up($i, $breakpoint);
+      }
+    }
+  }
+}
