@@ -4,7 +4,7 @@ a {
   cursor: pointer !important;
   &:hover,
   &:active {
-    color: rgba($color__navy, .8);
+    opacity: .9;
   }
 
   &.fixed {

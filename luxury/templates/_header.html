@@ -1,20 +1,48 @@
-<header class="site-header container--fluid">
-  <div class="banner pd-1-tb" id="banner">
-    <div class="container--fluid">
-        Este es un diseño web lite con varios componentes visuales llamativos para usar en una página web.
-        <a class="fixed">Explorar!</a>
-
-        <span class="close">
-          <a onclick="document.getElementById('banner').style.display='none'"><i class="material-icons xs">close</i></a>
-        </span>
-    </div>
-  </div>
-
+<div class="site-header-wrapper">
+  <header class="site-header container--fluid">
   <div class="container--fluid">
     <div class="site-nav">
-      <a href="#" class="link">Buscar</a>
-      <a href="#" class="link">Menú</a>
-      <a href="#" class="link">Mi cuenta</a>
+      <a href="javascript:void(0)" class="link">Buscar</a>
+      <a href="javascript:void(0)" class="link" onclick="document.getElementById('menu').style.display='block'">Menú</a>
+      <a href="javascript:void(0)" class="link">Mi cuenta</a>
     </div>
   </div>
 </header>
+</div>
+
+<div class="header__menu" id="menu">
+  <a href="javascript:void(0)" class="close" onclick="document.getElementById('menu').style.display='none'">
+    <i class="material-icons lg">close</i>
+  </a>
+  <article>
+    <h1 class="block">Menú</h1>
+    <div class="gw sm-two-up">
+      <div class="g">
+        <ul>
+          <li>
+            <a href="javascript:void(0)" class="link">Sobre Nosotros</a>
+          </li>
+
+          <li>
+            <a href="javascript:void(0)" class="link">Información de Contacto</a>
+          </li>
+
+          <li>
+            <a href="javascript:void(0)" class="link">Suscribirse al newsletter</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="g">
+        <ul>
+          <li>
+            <a href="javascript:void(0)" class="link">Mapa del sitio</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="link">Síganos en redes sociales</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</div>

@@ -1,49 +1,14 @@
-/**
-
-  @alerts
----------------------------------------------------------
-  modules/_alerts.scss
---------------------------------------------------------
-
-  Alerts are UI elements that give important info
-
-  Example: Error
-  <div class="alert alert--error">
-    <a href="#" class="btn__close">&times;</a>
-    <p>Uh oh - something went wrong</p>
-  </div>
-
-  Example: Warning
-  <div class="alert alert--warning">
-    <a href="#" class="btn__close">&times;</a>
-    <p>Shake it fast, but watch yourself.</p>
-  </div>
-
-  Example: Success
-  <div class="alert alert--success">
-    <a href="#" class="btn__close">&times;</a>
-    <p>The secret to my success is that I learn, 25 hours a day!</p>
-  </div>
-
-  Example: Info
-  <div class="alert alert--info">
-    <a href="#" class="btn__close">&times;</a>
-    <p>Did you ever know that you're my hero?</p>
-  </div>
-
-  NOTE: The code below uses declared color units, if you'd
-        prefer, declare those as variables in _vars.scss
-
------------------------------------------------------- */
-
-
+/* @alerts */
 .alert {
   position: relative;
   border-width: 1px;
   border-style: solid;
-  margin-bottom: 2*$unit;
-  padding: .5rem 4rem .5rem .5rem;
   line-height: 1.25;
+  padding: 1em;
+
+  &.alert--fluid {
+    padding: 1em $unit*3;
+  }
 
   // text
   p {
@@ -52,9 +17,9 @@
 
   // Close buttons in alert
   .btn__close {
-    position: absolute;
-    top: 50%;
-    margin-top: -.75em;
+    float: right;
+    margin: auto 0;
+    height: 1em;
     right: 1em;
     opacity: .5;
     -webkit-transition: all .3s;
@@ -67,14 +32,10 @@
 
 }
 
-
-
-
 // Error alert
-//
 .alert--error {
   color: #e04646;
-  border-color: #e04646;
+  border-color: rgba(#e04646, .3);
   background: #ffe6e6;
   // Color of close button
   .btn__close {
@@ -86,13 +47,10 @@
   }
 }
 
-
-
 // Warning alert
-//
 .alert--warning {
   color: #b29804;
-  border-color: #b29804;
+  border-color: rgba(#b29804, .3);
   background: #fcf7d8;
   // Color of close button
   .btn__close {
@@ -104,13 +62,10 @@
   }
 }
 
-
-
 // Info alert
-//
 .alert--info {
   color: #537df6;
-  border-color: #537df6;
+  border-color: rgba(#537df6, .3);
   background: #e8f3ff;
   // Color of close button
   .btn__close {
@@ -122,13 +77,10 @@
   }
 }
 
-
-
 // Success alert
-//
 .alert--success {
   color: #0ca129;
-  border-color: #0ca129;
+  border-color: rgba(#0ca129, .3);
   background: #dafce1;
   // Color of close button
   .btn__close {

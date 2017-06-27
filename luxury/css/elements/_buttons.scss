@@ -48,7 +48,12 @@ button {
 
 /* @btn--inline */
 .btn--inline {
-  margin-right: $unit*0.3;
+  display: inline-block;
+  width: auto;
+  margin-left: $unit*0.3;
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
 /* @btn--block */

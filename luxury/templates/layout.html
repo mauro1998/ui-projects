@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Luxury</title>
+  <title>Luxury Theme</title>
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
@@ -15,9 +15,26 @@
 
     <main class="site-main">
       <div class="page">
+
+        <!-- <div class="banner pd-1-tb" id="banner">
+          <div class="container--fluid">
+            Este es un diseño web lite con varios componentes visuales llamativos para usar en una página web.
+            <a class="fixed">Explorar!</a>
+
+            <span class="close">
+              <a onclick="document.getElementById('banner').style.display='none'"><i class="material-icons xs">close</i></a>
+            </span>
+          </div>
+        </div> -->
+
+        <div class="alert alert--info alert--fluid" id="alert-banner">
+            <a href="#" class="btn__close" onclick="document.getElementById('alert-banner').style.display = 'none'; return false;"><i class="material-icons xs">close</i></a>
+            <p><strong>Hola!</strong> Este es un diseño web lite con varios componentes visuales llamativos para usar en una página web.</p>
+        </div>
+
         <section class="page__header">
           <div class="container--fluid">
-            <h1>Módulos y Componentes de Ejemplo</h1>
+            <h1>Módulos y Componentes</h1>
             <article>
               <p>Componentes reusables listos para empezar a crear un gran diseño!</p>
               <p>
@@ -32,9 +49,11 @@
 
         @@include('_callouts.html')
         @@include('_thumbnails.html')
+        @@include('_previews.html')
         @@include('_buttons.html')
         @@include('_alerts.html')
         @@include('_modals.html')
+        @@include('_forms.html')
       </div>
     </main>
   </div>

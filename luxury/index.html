@@ -4,40 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Luxury</title>
+  <title>Luxury Theme</title>
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
 </head>
 <body>
   <div class="site">
-    <header class="site-header container--fluid">
-  <div class="banner pd-1-tb" id="banner">
-    <div class="container--fluid">
-        Este es un diseño web lite con varios componentes visuales llamativos para usar en una página web.
-        <a class="fixed">Explorar!</a>
-
-        <span class="close">
-          <a onclick="document.getElementById('banner').style.display='none'"><i class="material-icons xs">close</i></a>
-        </span>
-    </div>
-  </div>
-
+    <div class="site-header-wrapper">
+  <header class="site-header container--fluid">
   <div class="container--fluid">
     <div class="site-nav">
-      <a href="#" class="link">Buscar</a>
-      <a href="#" class="link">Menú</a>
-      <a href="#" class="link">Mi cuenta</a>
+      <a href="javascript:void(0)" class="link">Buscar</a>
+      <a href="javascript:void(0)" class="link" onclick="document.getElementById('menu').style.display='block'">Menú</a>
+      <a href="javascript:void(0)" class="link">Mi cuenta</a>
     </div>
   </div>
 </header>
+</div>
+
+<div class="header__menu" id="menu">
+  <a href="javascript:void(0)" class="close" onclick="document.getElementById('menu').style.display='none'">
+    <i class="material-icons lg">close</i>
+  </a>
+  <article>
+    <h1 class="block">Menú</h1>
+    <div class="gw sm-two-up">
+      <div class="g">
+        <ul>
+          <li>
+            <a href="javascript:void(0)" class="link">Sobre Nosotros</a>
+          </li>
+
+          <li>
+            <a href="javascript:void(0)" class="link">Información de Contacto</a>
+          </li>
+
+          <li>
+            <a href="javascript:void(0)" class="link">Suscribirse al newsletter</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="g">
+        <ul>
+          <li>
+            <a href="javascript:void(0)" class="link">Mapa del sitio</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="link">Síganos en redes sociales</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</div>
 
 
     <main class="site-main">
       <div class="page">
+
+        <!-- <div class="banner pd-1-tb" id="banner">
+          <div class="container--fluid">
+            Este es un diseño web lite con varios componentes visuales llamativos para usar en una página web.
+            <a class="fixed">Explorar!</a>
+
+            <span class="close">
+              <a onclick="document.getElementById('banner').style.display='none'"><i class="material-icons xs">close</i></a>
+            </span>
+          </div>
+        </div> -->
+
+        <div class="alert alert--info alert--fluid" id="alert-banner">
+            <a href="#" class="btn__close" onclick="document.getElementById('alert-banner').style.display = 'none'; return false;"><i class="material-icons xs">close</i></a>
+            <p><strong>Hola!</strong> Este es un diseño web lite con varios componentes visuales llamativos para usar en una página web.</p>
+        </div>
+
         <section class="page__header">
           <div class="container--fluid">
-            <h1>Módulos y Componentes de Ejemplo</h1>
+            <h1>Módulos y Componentes</h1>
             <article>
               <p>Componentes reusables listos para empezar a crear un gran diseño!</p>
               <p>
@@ -99,7 +144,7 @@
   </article>
   <div class="gw sm-two-up md-four-up">
     <div class="g">
-      <a class="thumbnail" href="#">
+      <a class="thumbnail" href="javascript:void(0)">
         <img class="thumbnail__media" src="images/fpo-500x300.jpg">
         <div class="thumbnail__caption">
           <h2>Un título capcioso</h2>
@@ -108,7 +153,7 @@
       </a>
     </div>
     <div class="g">
-      <a class="thumbnail" href="#">
+      <a class="thumbnail" href="javascript:void(0)">
         <img class="thumbnail__media" src="images/fpo-500x300.jpg">
         <div class="thumbnail__caption">
           <h2>Un título capcioso</h2>
@@ -117,7 +162,7 @@
       </a>
     </div>
     <div class="g">
-      <a class="thumbnail" href="#">
+      <a class="thumbnail" href="javascript:void(0)">
         <img class="thumbnail__media" src="images/fpo-500x300.jpg">
         <div class="thumbnail__caption">
           <h2>Un título capcioso</h2>
@@ -126,7 +171,7 @@
       </a>
     </div>
     <div class="g">
-      <a class="thumbnail" href="#">
+      <a class="thumbnail" href="javascript:void(0)">
         <img class="thumbnail__media" src="images/fpo-500x300.jpg">
         <div class="thumbnail__caption">
           <h2>Un título capcioso</h2>
@@ -137,6 +182,65 @@
   </div><!--/gw-->
 </section>
 
+        <section class="block container--fluid">
+  <h2>Previews</h2>
+  <article>
+    <p>
+      Los <strong>previews</strong> son elementos visuales de la UI que permiten previsualizar algún tipo de contenido, generalmente imágenes (de productos, por ejemplo).
+    </p>
+  </article>
+
+  <div class="gw sm-two-up lg-four-up">
+    <div class="g">
+      <div class="preview preview--small preview--lite">
+        <div class="preview__hidden-face">
+          <span>
+            Ejemplo de preview pequeño.<br>
+            Esta capa oculta opcional puede usarse para un llamado a la acción.<br><br>
+            <button class="btn btn--secondary">Acción</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="g">
+      <div class="preview preview--small preview--lite">
+        <div class="preview__hidden-face">
+          <span>
+            Ejemplo de preview pequeño.<br>
+            Esta capa oculta opcional puede usarse para un llamado a la acción.<br><br>
+            <button class="btn btn--secondary">Acción</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="g">
+      <div class="preview preview--small">
+        <div class="preview__hidden-face">
+          <span>
+            Ejemplo de preview pequeño.<br>
+            Esta capa oculta opcional puede usarse para un llamado a la acción.<br><br>
+            <button class="btn">Acción</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="g">
+      <div class="preview preview--small">
+        <div class="preview__hidden-face">
+          <span>
+            Ejemplo de preview pequeño.<br>
+            Esta capa oculta opcional puede usarse para un llamado a la acción.<br><br>
+            <button class="btn">Acción</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
         <section class="section block--ends">
   <h2>Botones</h2>
   <button class="btn btn--small">Primario</button>
@@ -145,32 +249,35 @@
   <button class="btn btn--small btn--secondary">Secundario</button>
 </section>
 
-        <!--
-<section class="block container">
-  <h3>Alerts</h3>
-  <p>Alerts are UI elements that give important info.</p>
-  <div class="alert alert--error" id="alert-1">
-    <a href="#" class="btn__close" onclick="document.getElementById('alert-1').style.display = 'none'; return false;">&times;</a>
-    <p>ERROR: Uh oh - something went wrong</p>
+        <section class="block container--fluid">
+  <h2>Alertas</h2>
+  <article>
+    <p>Las alertas son elementos de la UI que aportan información importante al usuario:</p>
+  </article>
+  <div class="alert block alert--error" id="alert-1">
+    <a href="#" class="btn__close" onclick="document.getElementById('alert-1').style.display = 'none'; return false;"><i class="material-icons xs">close</i></a>
+    <p><strong>Error:</strong> Lo sentimos, algo ha salido mal.</p>
   </div>
-  <div class="alert alert--warning" id="alert-2">
-    <a href="#" class="btn__close" onclick="document.getElementById('alert-2').style.display = 'none'; return false;">&times;</a>
-    <p>WARNING: Shake it fast, but watch yourself.</p>
+  <div class="alert block alert--warning" id="alert-2">
+    <a href="#" class="btn__close" onclick="document.getElementById('alert-2').style.display = 'none'; return false;"><i class="material-icons xs">close</i></a>
+    <p><strong>Alerta:</strong> Estas configuraciones no se pueden revertir, ten cuidado.</p>
   </div>
-  <div class="alert alert--success" id="alert-3">
-    <a href="#" class="btn__close" onclick="document.getElementById('alert-3').style.display = 'none'; return false;">&times;</a>
-    <p>SUCCESS: The secret to my success is that I learn, 25 hours a day!</p>
+  <div class="alert block alert--success" id="alert-3">
+    <a href="#" class="btn__close" onclick="document.getElementById('alert-3').style.display = 'none'; return false;"><i class="material-icons xs">close</i></a>
+    <p><strong>Muy bien!:</strong> Lo lograste, sigue así.</p>
   </div>
   <div class="alert alert--info" id="alert-4">
-    <a href="#" class="btn__close" onclick="document.getElementById('alert-4').style.display = 'none'; return false;">&times;</a>
-    <p>INFO: All the planets can fit in the space between the earth and moon.</p>
+    <a href="#" class="btn__close" onclick="document.getElementById('alert-4').style.display = 'none'; return false;"><i class="material-icons xs">close</i></a>
+    <p><strong>¿Sabías que...</strong> el 1% de las personas en todo el mundo es dueño de la mitad de las riquezas?</p>
   </div>
-</section> -->
+</section>
 
-        <section class="block container">
-  <hr>
-  <h3>Modales</h3>
-  <p>Clic en el botón de abajo para ver una ventana modal en acción</p>
+        <section class="block container--fluid">
+  <article>
+    <hr>
+    <h2>Modales</h2>
+    <p>Clic en el botón de abajo para ver una ventana modal en acción</p>
+  </article>
   <button class="btn" onclick="document.getElementById('modal').style.display = 'block'; return false;">Mostrar</button>
   <div id="modal" class="modal">
     <div class="modal__container">
@@ -188,6 +295,86 @@
     </div>
     <a href="#" class="modal__close" onclick="document.getElementById('modal').style.display = 'none'; return false;"><i class="material-icons lg">close</i></a>
   </div>
+</section>
+
+        <section class="block container--fluid">
+  <h2>Formularios</h2>
+  <article>
+    <p>
+      Los formularios son uno de los elementos más importantes en cualquier página web debido a que permiten al usuario interactuar con la aplicación, generalmente proporcionando entradas de datos que serán posteriormente procesados por el sistema con algún fin.
+    </p>
+    <p>
+      Su componente visual no es menos importante; en este tema se intenta crear formularios limpios, simples y concisos, acordes con el diseño en general de los otros componentes y fáciles de llenar para el usuario final:
+    </p>
+
+    <hr>
+
+    <form class="form">
+      <legend>Ejemplo de Formulario de Petición</legend>
+      <div class="gw sm-two-up">
+        <div class="g">
+          <fieldset>
+            <article class="field">
+              <input class="field__input" id="exampleInputA" type="text" required="required" placeholder="Su Nombre">
+              <span class="field__feedback"></span>
+              <span class="field__hint"></span>
+            </article>
+            <article class="field">
+              <input class="field__input" id="exampleInput2" type="email" required="required" placeholder="Su Email">
+              <span class="field__feedback"></span>
+              <span class="field__hint">Proporcione una dirección de correo válida</span>
+            </article>
+          </fieldset>
+
+          <fieldset>
+            <article class="field">
+              <label class="field__label">Tipo de solicitud</label>
+              <div class="field__input-group">
+                <label class="label--radio" for="submission-type-1"><input id="submission-type-1" name="submission-type" type="radio" value="pizza"> Queja</label>
+                <label class="label--radio" for="submission-type-2"><input id="submission-type-2" name="submission-type" type="radio" value="tacos"> Reclamo</label>
+                <label class="label--radio" for="submission-type-3"><input id="submission-type-3" name="submission-type" type="radio" value="burgers"> Sugerencia</label>
+              </div>
+              <span class="field__feedback"></span>
+              <span class="field__hint"></span>
+            </article>
+          </fieldset>
+        </div>
+
+        <div class="g">
+          <fieldset>
+            <article class="field">
+              <div class="field__select">
+                <select name="schramburger">
+                  <option value="value-1">Seleccione ciudad</option>
+                  <option value="value-2">Medellín</option>
+                  <option value="value-3">Bucaramanga</option>
+                  <option value="value-4">Bogotá</option>
+                  <option value="value-5">Pereira</option>
+                  <option value="value-6">Cali</option>
+                  <option value="value-7">Barranquilla</option>
+                </select>
+              </div>
+            </article>
+          </fieldset>
+
+          <fieldset>
+            <article class="field">
+              <textarea rows="8" class="field__input" placeholder="Cuerpo del mensaje"></textarea>
+              <span class="field__feedback"></span>
+              <span class="field__hint"></span>
+            </article>
+          </fieldset>
+        </div>
+
+        <div class="g clear">
+          <footer class="form__actions--right">
+            <input type="submit" class="btn btn--inline" value="Submit">
+          </footer>
+        </div>
+      </div>
+    </form>
+
+  </article>
 </section>
 
       </div>

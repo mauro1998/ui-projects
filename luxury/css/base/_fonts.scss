@@ -84,7 +84,7 @@ $assistant: Assistant;
   font-style: normal;
 }
 
-$josefin-sans: "Josefin Sans";
+$josefin-sans: "Josefin Sans", Assistant, sans-serif;
 
 %josefin-sans--light {
   font-family: $josefin-sans;
