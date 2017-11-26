@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkout Form - UI Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="ui--wrapper">
+        <div class="ui--container">
+            <div class="block">
+                <h1 class="uppercase">sign up</h1>
+            </div>
+            <div class="actions--top block">
+                <button class="btn btn--facebook btn--block">signup with facebook</button>
+                <button class="btn btn--google btn--block">signup with google</button>
+            </div>
+            <div class="block or">
+                <span class="uppercase">or</span>
+            </div>
+            <div class="signup--form">
+                <form class="form">
+                    <div class="form-slide">
+                        <div class="first-step step">
+                            <fieldset>
+                                <input type="text" placeholder="Full name">
+                            </fieldset>
+                            <fieldset class="block">
+                                <input type="text" placeholder="Email address">
+                            </fieldset>
+                            <fieldset>
+                                <button type="button" class="btn btn--white btn--block next">next</button>
+                            </fieldset>
+                        </div>
+                        <div class="second-step step">
+                            <fieldset>
+                                <input type="password" placeholder="Password">
+                            </fieldset>
+                            <fieldset class="block">
+                                <input type="password" placeholder="Confirm password">
+                            </fieldset>
+                            <fieldset>
+                                <button class="btn btn--white btn--block create">create account</button>
+                            </fieldset>
+                            <a href="#" class="link back red">< Go back</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <span class="sign-in">Already have an account?
+                <a class="link" href="#">Sign in</a>
+            </span>
+        </div>
+    </div>
+
+    <script>
+        var next = document.querySelector('.next');
+        var back = document.querySelector('.back');
+        var slide = document.querySelector('.form-slide');
+        var animation;
+        next.addEventListener('click', function () {
+            animation = slide.animate([
+                { transform: 'translateX(0)' },
+                { transform: 'translateX(-110%)' }
+            ], {
+                iterations: 1,
+                duration: 300,
+                easing: 'ease-in-out',
+                fill: 'both'
+            });
+        });
+
+        back.addEventListener('click', function () {
+            if (animation) animation.reverse();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+@import "../base/style";
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600,700|Roboto:300,400,500,700');
+%roboto--light {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+%roboto--regular {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+%roboto--semi-bold {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+%roboto--bold {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+%barlow--regular {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+%barlow--semi-bold {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+%barlow--bold {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+body {
+    @extend %roboto--regular;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: $color__navy;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %barlow--semi-bold;
+}
+
+.absolute {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
+
+$color__bg: #15135d;
+.ui--wrapper {
+    @extend .absolute;
+    width: $breakpoint__xs;
+    height: 568 / 16 + em;
+}
+
+.ui--container {
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 10px $color__bg;
+    padding: $unit*2;
+    color: $color__white;
+    text-align: center;
+    background-color: $color__bg;
+    background-image: url(http://clipart-library.com/images/kTMn87bEc.png);
+    background-repeat: no-repeat;
+    background-position: center 112%;
+    background-size: 110%;
+    background: #15135d;
+    background: -moz-linear-gradient(-45deg, #15135d 0%, #15135d 50%, #15135d 51%, rgba($color__bg, .1) 100%);
+    background: -webkit-linear-gradient(-45deg, #15135d 0%, #15135d 50%, #15135d 51%, rgba($color__bg, .1) 100%);
+    background: linear-gradient(135deg, #15135d 0%, #15135d 50%, #15135d 51%, rgba($color__bg, .1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15135d', endColorstr='#4628bf', GradientType=1);
+}
+
+.btn {
+    @extend %roboto--regular;
+}
+
+.btn--block {
+    margin-bottom: $unit*.5;
+}
+
+.btn--white {
+    color: $color__bg;
+    background: $color__white;
+}
+
+$color__facebook: #3954a0;
+$color__google: #dc4a38;
+.btn--facebook {
+    background: $color__facebook;
+    color: $color__white;
+}
+
+.btn--google {
+    background: $color__google;
+    color: $color__white;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.or {
+    position: relative;
+    border-top: 1px solid;
+    span {
+        @extend .absolute;
+        display: block;
+        width: 4em;
+        height: 1.4em;
+        font-size: $unit;
+        background: $color__bg;
+    }
+}
+
+.form {
+    height: 205 / 14 + em;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    .form-slide {
+        @include clearfix();
+        position: absolute;
+        width: 100%;
+        height: 188.94 / 14 + em;
+        top: 0;
+    
+        .step {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            &.second-step {
+                left: 110%;
+            }
+        }
+    }
+}
+
+form {
+    fieldset {
+        position: relative;
+        margin-bottom: $unit*.5;
+    }
+    input {
+        background: rgba(0, 0, 0, .4);
+        color: $color__offwhite;
+        border: 0 none;
+        padding: $unit*.9;
+        font-size: $unit*.9;
+        @extend %roboto--light;
+        &::-webkit-input-placeholder {
+            color: rgba($color__offwhite, .8);
+        }
+        &::-moz-placeholder {
+            color: rgba($color__offwhite, .8);
+        }
+        &:-ms-input-placeholder {
+            color: rgba($color__offwhite, .8);
+        }
+        &:-moz-placeholder {
+            color: rgba($color__offwhite, .8);
+        }
+        &:focus {
+            &::-webkit-input-placeholder {
+                color: $color__white;
+            }
+            &::-moz-placeholder {
+                color: $color__white;
+            }
+            &:-ms-input-placeholder {
+                color: $color__white;
+            }
+            &:-moz-placeholder {
+                color: $color__white;
+            }
+        }
+    }
+}
+
+a.link {
+    color: $color__facebook;
+    @extend %roboto--bold;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &.red {
+        color: $color__google;
+    }
+}
+
+.sign-in {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    margin-bottom: $unit*2;
+}

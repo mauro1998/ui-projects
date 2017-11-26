@@ -1,0 +1,58 @@
+/* @media objects
+---------------------------------------------------------
+
+  Example: Media object, left
+  <article class="media">
+    <div class="media__left one-fifth">
+      <img src="http://fillmurray.com/300/300">
+    </div>
+    <div class="media__body">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+  </article>
+
+  Example: Media object, right
+  <article class="media">
+    <div class="media__right one-fifth">
+      <img src="http://fillmurray.com/300/300">
+    </div>
+    <div class="media__body">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+  </article>
+
+---------------------------------------------------------  */
+
+// The main media object
+.media{
+  display: block;
+  @include clearfix();
+  margin-bottom: 1em;  // you might end up changing this, either globally or per module
+}
+
+// Child elements, to the left or right
+.media__left {
+  float: left;
+  margin-right: 1em;  // you might end up changing this, either globally or per module
+}
+.media__right {
+  float: right;
+  margin-left: 1em;
+}
+
+// The images inside those left/right elements should be block
+.media__left img,
+.media__right img {
+  display:block;
+}
+
+
+
+// The body of the media element
+.media__body {
+  overflow: hidden;
+}
+.media__body,
+.media__body > :last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,40 @@
+$color__black: #212224;
+$color__grey: #b0b3b3;
+$color__grey--light: #cfd2d2;
+$color__offwhite: #f4f4f4;
+$color__white: #fff;
+$color__navy: #151e23;
+
+/* @breakpoints */
+$breakpoints: (
+ n:  0,
+ xs: 20em,
+ sm: 34.375em,
+ md: 48em,
+ lg: 64em,
+ xl: 78.5em,
+ xxl: 100em
+);
+
+// Define individual variables
+
+// Extra Small: Small mobile
+$breakpoint__xs: map-get($breakpoints, xs);
+
+// Small: Larger mobile
+$breakpoint__sm: map-get($breakpoints, sm);
+
+// Medium: Tablet
+$breakpoint__md: map-get($breakpoints, md);
+
+// Large: Landscape tablet, beginning desk size
+$breakpoint__lg: map-get($breakpoints, lg);
+
+// Extra Large: Large Desk size
+$breakpoint__xl: map-get($breakpoints, xl);
+
+// Double Extra Large: Huge Desk size
+$breakpoint__xxl: map-get($breakpoints, xxl);
+
+/* @global spacing unit */
+$unit: 1.125em;

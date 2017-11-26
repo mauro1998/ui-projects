@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 $sans:sans-serif;
 
@@ -52,28 +52,28 @@ $serif: georgia, times;
   font-style: italic;
 }
 
-$montserrat: montserrat;
+$roboto: Roboto;
 
 %montserrat--light {
-  font-family: $montserrat;
+  font-family: $roboto;
   font-weight: 300;
   font-style: normal;
 }
 
 %montserrat--regular {
-  font-family: $montserrat;
+  font-family: $roboto;
   font-weight: 400;
   font-style: normal;
 }
 
 %montserrat--italic {
-  font-family: $montserrat;
+  font-family: $roboto;
   font-weight: 400;
   font-style: italic;
 }
 
 %montserrat--semi-bold {
-  font-family: $montserrat;
+  font-family: $roboto;
   font-weight: 600;
   font-style: italic;
 }
