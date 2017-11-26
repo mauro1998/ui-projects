@@ -2131,7 +2131,7 @@ fieldset {
   margin-top: 2em;
   border-top: 1px solid #888; }
 
-.player .content .player--info span, .player .content .short span {
+.player .content .player--info span, .player .content .short span, .stats-content .player--stats .player--details .details .player--info > span, .stats-content .player--stats .stats li.stat {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 300; }
@@ -2141,7 +2141,7 @@ body, .btn {
   font-style: normal;
   font-weight: 400; }
 
-.player .content .player--info span:first-child {
+.player .content .player--info span:first-child, .stats-content .player--stats .player--details .details .player--info > span:first-child {
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-style: normal;
   font-weight: 400; }
@@ -2184,8 +2184,8 @@ body {
   font-size: 14px;
   width: 100%;
   height: 100%;
-  box-shadow: 0px 0px 10px color__asphalt;
-  background-color: #202d3a;
+  box-shadow: 0px 0px 10px #2c3e50;
+  background-color: #2c3e50;
   text-align: center; }
   .ui--container:not(:first-child) {
     position: absolute;
@@ -2228,7 +2228,7 @@ body {
   text-transform: uppercase; }
 
 ul.list {
-  max-height: 36.96429em;
+  max-height: 36.03571em;
   overflow: auto; }
   ul.list li {
     list-style: none; }
@@ -2237,7 +2237,7 @@ ul.list {
   zoom: 1;
   display: block;
   position: relative;
-  background: #2c3e50;
+  background: #202d3a;
   padding: 0.5625em;
   color: #f4f4f4;
   margin-bottom: 2px;
@@ -2286,3 +2286,60 @@ ul.list {
         font-size: 1.3em;
         vertical-align: middle;
         display: table-cell; }
+
+.stats-content {
+  position: relative;
+  text-align: left; }
+  .stats-content .player--stats {
+    color: #f4f4f4; }
+    .stats-content .player--stats .player--details {
+      zoom: 1;
+      background: #202d3a;
+      padding: 1.125em; }
+      .stats-content .player--stats .player--details:before, .stats-content .player--stats .player--details:after {
+        content: " ";
+        display: table; }
+      .stats-content .player--stats .player--details:after {
+        clear: both; }
+      .stats-content .player--stats .player--details .details .thumbnail {
+        float: left;
+        width: 8em;
+        height: 8em;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 3px; }
+      .stats-content .player--stats .player--details .details .player--info {
+        margin-left: 9em; }
+        .stats-content .player--stats .player--details .details .player--info > span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          color: rgba(244, 244, 244, 0.6);
+          display: block; }
+          .stats-content .player--stats .player--details .details .player--info > span:first-child {
+            font-size: 1.4625em;
+            color: #fff;
+            margin-bottom: 0.45em; }
+        .stats-content .player--stats .player--details .details .player--info .flag {
+          width: 3em; }
+    .stats-content .player--stats .stats {
+      zoom: 1;
+      position: relative;
+      list-style: none;
+      padding: 1.125em; }
+      .stats-content .player--stats .stats:before, .stats-content .player--stats .stats:after {
+        content: " ";
+        display: table; }
+      .stats-content .player--stats .stats:after {
+        clear: both; }
+      .stats-content .player--stats .stats li.stat {
+        list-style: none;
+        position: relative;
+        border-bottom: 1px dashed rgba(244, 244, 244, 0.2);
+        padding-bottom: .5em;
+        margin-bottom: 1.125em;
+        color: rgba(244, 244, 244, 0.6); }
+        .stats-content .player--stats .stats li.stat span:last-child {
+          float: right;
+          color: rgba(244, 244, 244, 0.8); }
