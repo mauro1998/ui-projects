@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soccer Template - UI Component</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="ui--wrapper">
+        <div class="ui-slide">
+            <div class="ui--container">
+                <div class="title">
+                    <h3>UEFA Ranking</h3>
+                </div>
+                <ul class="list player-list">
+
+                </ul>
+            </div>
+            <div class="ui--container">
+                <div class="title">
+                    <div class="btn--container">
+                        <button class="btn btn--icon back">
+                            <span class="fa fa-chevron-left"></span>
+                        </button>
+                    </div>
+                    <h3>Player Stats</h3>
+                </div>
+                <ul class="list player-list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <template id="player-item">
+        <li class="player">
+            <div class="thumbnail"></div>
+            <div class="content">
+                <div class="player--info">
+                    <span class="name"></span>
+                    <span class="summary"></span>
+                    <span class="country"></span>
+                </div>
+                <div class="short">
+                    <span class="team"></span>
+                </div>
+            </div>
+        </li>
+    </template>
+
+    <script>
+        if ('content' in document.createElement('template')) {
+            var slide = document.querySelector('.ui-slide');
+            var playerItemTemplate = document.getElementById('player-item');
+            var list = document.querySelector('.player-list');
+            var players = [
+                {
+                    name: 'Cristiano Ronaldo',
+                    country: 'Portugal',
+                    team: 'Real Madrid',
+                    position: 'Delantero',
+                    short: 'RMD',
+                    thumbnail: 'https://files.telegram-store.com/files/aa/aa96/aa965c5d989bfd2f3ccbfc72eac6d7ce.jpg'
+                },
+                {
+                    name: 'Lionel Messi',
+                    country: 'Argentina',
+                    team: 'Barcelona',
+                    position: 'Delantero',
+                    short: 'BAR',
+                    thumbnail: 'http://www.tendenciagq.com/wp-content/uploads/2016/06/Lionel-Messi-corte2Bde2Bcabello-2016.jpg'
+                },
+                {
+                    name: 'Robert Lewandowski',
+                    country: 'Polonia',
+                    team: 'Bayern Munich',
+                    position: 'Delantero',
+                    short: 'MUN',
+                    thumbnail: 'https://scontent-sea1-1.cdninstagram.com/t51.2885-15/e35/12424749_543587875818135_810861171_n.jpg?ig_cache_key=MTEyOTA5MzY2NzE3NjM5OTYxNw%3D%3D.2'
+                },
+                {
+                    name: 'Edinson Cavani',
+                    country: 'Uruguay',
+                    team: 'Paris SG',
+                    position: 'Delantero',
+                    short: 'PSG',
+                    thumbnail: 'https://scontent-sjc2-1.cdninstagram.com/t51.2885-15/e35/c80.0.320.320/16110465_148559938976597_764392591142682624_n.jpg?ig_cache_key=MTQzMjgyNjU3NjM3NDU5ODg5MQ%3D%3D.2.c'
+                },
+                {
+                    name: 'Kylian Mbappe',
+                    country: 'Francia',
+                    team: 'Paris SG',
+                    position: 'Delantero',
+                    short: 'PSG',
+                    thumbnail: 'https://www.gqbuzz.com/wp-content/uploads/2017/07/kylian-mbappe-cropped_rvyhpeucqg361j0bi2utkuqlv-320x320.jpg'
+                },
+                {
+                    name: 'Antoine Griezmann',
+                    country: 'Francia',
+                    team: 'Madrid Atlético',
+                    position: 'Delantero',
+                    short: 'ATM',
+                    thumbnail: 'http://www.ent-redefined.org/wp-content/uploads/2017/02/Bayer-Leverkusen-2-%E2%80%93-4-Atletico-Madrid-Champions-League-Highlights.jpg'
+                },
+                {
+                    name: 'Neymar Jr.',
+                    country: 'Brasil',
+                    team: 'Paris SG',
+                    position: 'Delantero',
+                    short: 'PSG',
+                    thumbnail: 'https://i.pinimg.com/736x/f2/03/dd/f203ddec3ea14d99c2bb4490419bf865--neymar-jr-barcelona.jpg'
+                }
+            ];
+
+            function createPlayerItem(player) {
+                var template = document.importNode(playerItemTemplate.content, true);
+                var find = function (query) { return template.querySelector(query) };
+
+                find('.name').textContent = player.name;
+                find('.summary').textContent = player.position + ' | ' + player.team;
+                find('.country').textContent = player.country;
+                find('.team').textContent = player.short;
+                find('.thumbnail').style.backgroundImage = 'url(' + player.thumbnail + ')';
+
+                return template;
+            }
+
+            var animation;
+            players.map(createPlayerItem).forEach(function (player) {
+                list.appendChild(player);
+                list.lastElementChild.addEventListener('click', function () {
+                    animation = slide.animate([
+                        { transform: 'translateX(0)' },
+                        { transform: 'translateX(-100%)' }
+                    ], {
+                        iterations: 1,
+                        duration: 300,
+                        easing: 'ease-in-out',
+                        fill: 'forwards'
+                    });
+                }, true);
+            });
+
+            var back = document.querySelector('.btn.back');
+            back.addEventListener('click', function () {
+                if (animation) animation.reverse();
+            });
+        } else {
+            alert('Seems that this browser does not support the HTML5 template tag, please update your browser to see this example');
+        }
+    </script>
+</body>
+
+</html>

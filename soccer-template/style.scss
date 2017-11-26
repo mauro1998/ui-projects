@@ -1,0 +1,212 @@
+@import "../base/style";
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600,700|Roboto:300,400,500,700');
+%roboto--light {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+%roboto--regular {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+%roboto--semi-bold {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+%roboto--bold {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+%barlow--regular {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+%barlow--semi-bold {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+%barlow--bold {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+body {
+    @extend %roboto--regular;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: $color__navy;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %barlow--semi-bold;
+}
+
+$color__asphalt: #202d3a;
+$color__midnight: #2c3e50;
+.absolute {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
+
+.ui--wrapper {
+    @extend .absolute;
+    width: $breakpoint__xs;
+    height: 568 / 16 + em;
+    overflow: hidden;
+}
+
+.ui-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ui--container {
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 10px color__asphalt;
+    background-color: $color__asphalt;
+    text-align: center;
+
+    &:not(:first-child) {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+}
+
+.btn {
+    @extend %roboto--regular;
+}
+
+.btn--icon {
+    background: transparent;
+    display: inline-block;
+    width: 2.4em;
+    height: 2.4em;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    &:hover {
+        background: $color__navy;
+    }
+}
+
+.btn--block {
+    margin-bottom: $unit*.5;
+}
+
+
+.title {
+    @include clearfix();
+    padding: $unit;
+    color: $color__white;
+    text-align: center;
+    position: relative;
+
+    h3 {
+        line-height: 2em;
+        text-align: center;
+    }
+
+    .btn--container {
+        position: absolute;
+        left: $unit;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+ul.list {
+    max-height: (568 - 50.5) / 14 + em;
+    overflow: auto;
+    li {
+        list-style: none;
+    }
+}
+
+.player {
+    @include clearfix();
+    display: block;
+    position: relative;
+    background: $color__midnight;
+    padding: $unit*.5;
+    color: $color__offwhite;
+    margin-bottom: 2px;
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+        background: rgba($color__navy, .3);
+    }
+    .thumbnail {
+        width: 4.8em;
+        height: 4.8em;
+        position: relative;
+        background-position: center;
+        background-size: contain;
+        border-radius: 50%;
+        float: left;
+        box-shadow: 0px 0px 15px $color__navy;
+    }
+    .content {
+        margin-left: 6em;
+        .player--info {
+            float: left;
+            max-width: 10.7em;
+            span {
+                display: block;
+                text-align: left;
+                font-size: $unit*.8;
+                @extend %roboto--light;
+                margin-bottom: .2em;
+                color: rgba($color__offwhite, .6);
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                &:first-child {
+                    font-size: $unit;
+                    @extend %barlow--regular;
+                    color: $color__white;
+                }
+            }
+        }
+        .short {
+            float: right;
+            width: 5em;
+            height: 4.8em;
+            text-align: center;
+            display: table;
+            span {
+                font-size: 1.3em;
+                vertical-align: middle;
+                display: table-cell;
+                @extend %roboto--light;
+            }
+        }
+    }
+}
