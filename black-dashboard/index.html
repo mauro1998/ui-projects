@@ -98,10 +98,28 @@
             </nav>
             <main class="main-content">
                 <section class="block">
-                    <h2>Models</h2>
+                    <header class="section-header block">
+                        <h2>Models</h2>
+                        <div class="control-buttons">
+                            <button class="btn btn--primary">
+                                <span class="fa fa-chevron-left"></span>
+                            </button>
+                            <button class="btn btn--primary">
+                                <span class="fa fa-chevron-right"></span>
+                            </button>
+                        </div>
+                    </header>
+                    <div class="carrousel" id="models-carrousel">
+
+                    </div>
                 </section>
                 <section class="block">
-                    <h2>Profile Views</h2>
+                    <div class="block">
+                        <h2>Profile Views</h2>
+                    </div>
+                    <ul class="profile-views" id="profile-views">
+
+                    </ul>
                 </section>
                 <section class="block">
                     <h2>Featured Models</h2>
@@ -109,6 +127,172 @@
             </main>
         </div>
     </div>
+
+    <template id="carrousel-item-template">
+        <div class="carrousel-item">
+            <div class="picture">
+                <a href="#" class="img" style="background-image: url('{{url}}')"></a>
+            </div>
+            <div class="info">
+                <a href="#" class="link">
+                    <h3>{{name}}</h3>
+                </a>
+                <span>{{description}}</span>
+            </div>
+        </div>
+    </template>
+
+    <template id="profile-view-template">
+        <li class="profile-view">
+            <a class="view">
+                <div class="profile-data">
+                    <div class="profile-picture"></div>
+                    <div class="data">
+                        <h4 class="name">{{name}}</h4>
+                        <span class="last-time">{{time}}</span>
+                    </div>
+                </div>
+                <div class="date">
+                    {{date}}
+                </div>
+            </a>
+        </li>
+    </template>
+
+    <script>
+        (function () {
+            var browserSupportsTemplate = 'content' in document.createElement('template');
+            var msg = 'Browser does not support <template> tag';
+            if (!browserSupportsTemplate) throw new Error(msg);
+
+            function createTemplate(selector) {
+                var template = document.querySelector(selector);
+
+                var Template = function (data) {
+                    this._data = data || {};
+                    this._template = template;
+                    this.element = this._parse();
+                };
+
+                Template.prototype._parse = function () {
+                    var html = this._template.innerHTML;
+                    var curlyBracesRegExp = /{{\s*([\w\.]+)\s*}}/g;
+                    var data = this._data;
+                    var parsed = html.replace(curlyBracesRegExp, function (_, key) {
+                        var value;
+
+                        if (/\./g.test(key)) {
+                            var keys = str.split('.');
+                            value = keys.reduce(function (obj, strkey) {
+                                if (typeof obj === 'string' && !obj.trim()) return '';
+                                return obj[strkey] || '';
+                            }, data);
+                        } else value = data[key] || '';
+
+                        return value;
+                    });
+
+                    var container = document.createElement('div');
+                    container.innerHTML = parsed.trim();
+                    var fragment = document.createDocumentFragment();
+                    container.childNodes.forEach(function (node) {
+                        fragment.appendChild(node);
+                    });
+                    console.log(fragment);
+                    return fragment;
+                };
+
+                Template.prototype.appendTo = function (element) {
+                    var parent;
+                    if (typeof element === 'string') parent = document.querySelector(element);
+                    else parent = element;
+                    parent.appendChild(this.element);
+                }
+
+                Object.defineProperty(Template.prototype, 'data', {
+                    set: function (data) {
+                        this._data = data;
+                        this.element = this._parse();
+                    },
+                    get: function () {
+                        return this._data;
+                    }
+                });
+
+                return Template;
+            }
+
+            var CarrouselItem = createTemplate('#carrousel-item-template');
+            var models = [
+                {
+                    url: '',
+                    name: 'Josie Fox',
+                    description: 'Russian Model'
+                },
+                {
+                    url: '',
+                    name: 'Ella Ramos',
+                    description: 'Spanish Model'
+                },
+                {
+                    url: '',
+                    name: 'Bernice Butler',
+                    description: 'Italian Model'
+                },
+                {
+                    url: '',
+                    name: 'Millie Tyler',
+                    description: 'Brazilian Model'
+                },
+                {
+                    url: '',
+                    name: 'Vera Jefferson',
+                    description: 'Canadian Model'
+                }
+            ];
+
+            var container = document.querySelector('#models-carrousel');
+            models.forEach(function (model) {
+                var item = new CarrouselItem(model);
+                item.appendTo(container);
+            });
+
+            var ProfileView = createTemplate('#profile-view-template');
+            var profileViews = [
+                {
+                    name: 'Stella Martin',
+                    time: '34 min ago',
+                    date: '25 Sep 2018'
+                },
+                {
+                    name: 'Mamie Klein',
+                    time: '29 min ago',
+                    date: '25 Aug 2018'
+                },
+                {
+                    name: 'Nellie Carroll',
+                    time: '2 hours ago',
+                    date: '13 Oct 2018'
+                },
+                {
+                    name: 'Polly Watson',
+                    time: '4 hours ago',
+                    date: '26 Feb 2018'
+                },
+                {
+                    name: 'Mamie Klein',
+                    time: '7 hours ago',
+                    date: '31 Dic 2017'
+                }
+            ];
+
+            container = document.querySelector('#profile-views');
+            profileViews.forEach(function (view) {
+                var profileView = new ProfileView(view);
+                profileView.appendTo(container);
+            })
+        })();
+    </script>
 </body>
 
 </html>

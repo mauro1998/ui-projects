@@ -268,4 +268,101 @@ a {
             background-image: url("https://admin.nibbler.io/v1/AUTH_ca1f094bfd8b4ceea3a48b9c95409073/canlii_production/uploads/user/avatar/821/small_profile_pic.jpg");
             background-size: auto 100%; }
     .page .page-content main.main-content {
-      padding: 1.125em; }
+      padding-left: 1.125em;
+      padding-right: 1.125em; }
+      .page .page-content main.main-content header.section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+
+.carrousel {
+  zoom: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; }
+  .carrousel:before, .carrousel:after {
+    content: " ";
+    display: table; }
+  .carrousel:after {
+    clear: both; }
+  .carrousel .carrousel-item {
+    margin-right: 1.125em; }
+    .carrousel .carrousel-item .picture {
+      width: 15em;
+      padding-bottom: 100%;
+      background: #252c48;
+      position: relative;
+      margin-bottom: 1em; }
+      .carrousel .carrousel-item .picture .img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto; }
+    .carrousel .carrousel-item .info a.link {
+      display: block; }
+
+button {
+  background: transparent;
+  color: #d4d4e6;
+  outline: none;
+  font-size: 1em;
+  text-align: center; }
+
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  border: 0 none;
+  padding: 0.675em 0.9em;
+  background: #151e23;
+  cursor: pointer; }
+  .btn.btn--primary {
+    background: #252c48;
+    transition: .2s background ease; }
+    .btn.btn--primary:hover {
+      background: #5f3080; }
+    .btn.btn--primary:active {
+      background: #461d63; }
+
+ul.profile-views {
+  zoom: 1; }
+  ul.profile-views:before, ul.profile-views:after {
+    content: " ";
+    display: table; }
+  ul.profile-views:after {
+    clear: both; }
+  ul.profile-views li.profile-view {
+    zoom: 1;
+    list-style: none;
+    display: block; }
+    ul.profile-views li.profile-view:before, ul.profile-views li.profile-view:after {
+      content: " ";
+      display: table; }
+    ul.profile-views li.profile-view:after {
+      clear: both; }
+    ul.profile-views li.profile-view a.view {
+      padding: 0.5625em 0.7875em;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: .8em; }
+      ul.profile-views li.profile-view a.view:hover {
+        color: #949ab3;
+        background-color: #252c48;
+        box-shadow: 0px 0px 5px #151e23; }
+        ul.profile-views li.profile-view a.view:hover .profile-picture {
+          background: #1c2238 !important; }
+      ul.profile-views li.profile-view a.view div.profile-data {
+        display: flex;
+        align-items: center; }
+        ul.profile-views li.profile-view a.view div.profile-data div.profile-picture {
+          float: left;
+          width: 4.725em;
+          height: 4.725em;
+          border-radius: 50%;
+          background: #252c48; }
+        ul.profile-views li.profile-view a.view div.profile-data .data {
+          margin-left: 1.125em; }
