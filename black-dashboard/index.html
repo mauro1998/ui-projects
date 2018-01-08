@@ -113,17 +113,32 @@
 
                     </div>
                 </section>
-                <section class="block">
-                    <div class="block">
-                        <h2>Profile Views</h2>
-                    </div>
-                    <ul class="profile-views" id="profile-views">
+                <div class="row">
+                    <section class="block">
+                        <div class="block">
+                            <h2>Profile Views</h2>
+                        </div>
+                        <ul class="profile-views" id="profile-views">
 
-                    </ul>
-                </section>
-                <section class="block">
-                    <h2>Featured Models</h2>
-                </section>
+                        </ul>
+                    </section>
+                    <section class="block">
+                        <header class="section-header block">
+                            <h2>Featured Models</h2>
+                            <div class="control-buttons">
+                                <button class="btn btn--primary">
+                                    <span class="fa fa-chevron-left"></span>
+                                </button>
+                                <button class="btn btn--primary">
+                                    <span class="fa fa-chevron-right"></span>
+                                </button>
+                            </div>
+                        </header>
+                        <ul class="featured-models carrousel" id="featured-models">
+
+                        </ul>
+                    </section>
+                </div>
             </main>
         </div>
     </div>
@@ -290,7 +305,37 @@
             profileViews.forEach(function (view) {
                 var profileView = new ProfileView(view);
                 profileView.appendTo(container);
-            })
+            });
+
+            var FeaturedModel = createTemplate('#carrousel-item-template');
+            var featured = [
+                {
+                    url: '',
+                    name: 'Josie Fox',
+                    description: 'Russian Models'
+                },
+                {
+                    url: '',
+                    name: 'Ella Ramos',
+                    description: 'Spanish Models'
+                },
+                {
+                    url: '',
+                    name: 'Bernice Butler',
+                    description: 'Italian Models'
+                },
+                {
+                    url: '',
+                    name: 'Millie Tyler',
+                    description: 'Brazilian Models'
+                }
+            ];
+
+            container = document.querySelector('#featured-models');
+            featured.forEach(function (model) {
+                var featuredModel = new FeaturedModel(model);
+                featuredModel.appendTo(container);
+            });
         })();
     </script>
 </body>

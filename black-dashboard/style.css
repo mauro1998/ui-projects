@@ -326,43 +326,72 @@ button {
     .btn.btn--primary:active {
       background: #461d63; }
 
-ul.profile-views {
+.row {
+  display: flex; }
+  .row section:first-child {
+    margin-right: 1.125em; }
+  .row section:last-child {
+    overflow: hidden; }
+
+ol,
+ul {
   zoom: 1; }
-  ul.profile-views:before, ul.profile-views:after {
+  ol:before, ol:after,
+  ul:before,
+  ul:after {
     content: " ";
     display: table; }
-  ul.profile-views:after {
+  ol:after,
+  ul:after {
     clear: both; }
-  ul.profile-views li.profile-view {
+  ol li,
+  ul li {
     zoom: 1;
     list-style: none;
     display: block; }
-    ul.profile-views li.profile-view:before, ul.profile-views li.profile-view:after {
+    ol li:before, ol li:after,
+    ul li:before,
+    ul li:after {
       content: " ";
       display: table; }
-    ul.profile-views li.profile-view:after {
+    ol li:after,
+    ul li:after {
       clear: both; }
-    ul.profile-views li.profile-view a.view {
-      padding: 0.5625em 0.7875em;
+
+ul.profile-views {
+  width: 28em; }
+  ul.profile-views li.profile-view a.view {
+    padding: 0.5625em 0.7875em;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .8em; }
+    ul.profile-views li.profile-view a.view:hover {
+      color: #949ab3;
+      background-color: #272b49;
+      box-shadow: 0px 0px 15px #151e23; }
+      ul.profile-views li.profile-view a.view:hover .profile-picture {
+        background: #1c2238 !important; }
+    ul.profile-views li.profile-view a.view div.profile-data {
       display: flex;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: .8em; }
-      ul.profile-views li.profile-view a.view:hover {
-        color: #949ab3;
-        background-color: #252c48;
-        box-shadow: 0px 0px 5px #151e23; }
-        ul.profile-views li.profile-view a.view:hover .profile-picture {
-          background: #1c2238 !important; }
-      ul.profile-views li.profile-view a.view div.profile-data {
-        display: flex;
-        align-items: center; }
-        ul.profile-views li.profile-view a.view div.profile-data div.profile-picture {
-          float: left;
-          width: 4.725em;
-          height: 4.725em;
-          border-radius: 50%;
-          background: #252c48; }
-        ul.profile-views li.profile-view a.view div.profile-data .data {
-          margin-left: 1.125em; }
+      align-items: center; }
+      ul.profile-views li.profile-view a.view div.profile-data div.profile-picture {
+        float: left;
+        width: 4.725em;
+        height: 4.725em;
+        border-radius: 50%;
+        background: #252c48; }
+      ul.profile-views li.profile-view a.view div.profile-data .data {
+        margin-left: 1.125em; }
+
+ul.featured-models.carrousel .carrousel-item .picture {
+  width: 28em;
+  padding-bottom: 70%; }
+
+ul.featured-models.carrousel .carrousel-item .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  ul.featured-models.carrousel .carrousel-item .info span {
+    font-size: .9em; }

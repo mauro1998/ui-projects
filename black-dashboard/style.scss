@@ -267,12 +267,29 @@ button {
     }
 }
 
-ul.profile-views {
+.row {
+    display: flex;
+    section:first-child {
+        margin-right: $unit;
+    }
+    section:last-child {
+        overflow: hidden;
+    }
+}
+
+ol,
+ul {
     @include clearfix();
-    li.profile-view {
+    li {
         @include clearfix();
         list-style: none;
         display: block;
+    }
+}
+
+ul.profile-views {
+    width: 28em;
+    li.profile-view {
         a.view {
             padding: $unit*.5 $unit*.7;
             display: flex;
@@ -282,8 +299,8 @@ ul.profile-views {
             border-radius: .8em;
             &:hover {
                 color: $text_color;
-                background-color: $secondary_color;
-                box-shadow: 0px 0px 5px $color__navy;
+                background-color: #272b49;
+                box-shadow: 0px 0px 15px $color__navy;
                 .profile-picture {
                     background: $main_color !important;
                 }
@@ -301,6 +318,23 @@ ul.profile-views {
                 .data {
                     margin-left: $unit;
                 }
+            }
+        }
+    }
+}
+
+ul.featured-models.carrousel {
+    .carrousel-item {
+        .picture {
+            width: 28em;
+            padding-bottom: 70%;
+        }
+        .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                font-size: .9em;
             }
         }
     }
