@@ -1,0 +1,10 @@
+<div class="modal" [hidden]="hidden$ | async">
+  <div class="modal__container">
+    <div class="modal__body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <a class="modal__close" (click)="hidden$.next(true)">
+    <i class="material-icons lg">close</i>
+  </a>
+</div>

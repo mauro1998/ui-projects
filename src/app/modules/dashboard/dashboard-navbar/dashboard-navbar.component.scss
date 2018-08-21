@@ -1,0 +1,82 @@
+@import "../common";
+@import "../common";
+.nav-container {
+  height: (76 / 16) + em;
+}
+
+nav.page-content-navbar {
+  min-width: $breakpoint__xl - ($unit * 5);
+  position: fixed;
+  z-index: 90;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: $main_color;
+  padding: $unit;
+  padding-left: $aside_width + $unit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 10px 1px $color__navy;
+  .search-box {
+    width: 17em;
+    position: relative;
+    input[type=text] {
+      width: 100%;
+      background-color: $secondary_color;
+      border-radius: 5px;
+    }
+    label.search-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 3em;
+      color: $off_white_color;
+      font-size: $unit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .nav-items {
+    a.nav-item {
+      margin-left: $unit*2;
+      letter-spacing: .3px;
+      position: relative;
+      &:first-child {
+        margin-left: 0;
+      }
+      span.counter {
+        position: absolute;
+        bottom: 60%;
+        left: 100%;
+        width: 1.4em;
+        height: 1.3em;
+        background: $off_white_color;
+        color: $main_color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: .8em;
+      }
+    }
+  }
+  .profile-sidebar {
+    position: relative;
+    a {
+      display: flex;
+      align-items: center;
+      .rounded-pic {
+        background: $secondary_color;
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        margin: 0 .5em;
+        background-size: auto 100%;
+      }
+    }
+  }
+}

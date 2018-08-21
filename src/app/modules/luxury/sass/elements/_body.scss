@@ -1,0 +1,7 @@
+body {
+  @extend %sans--regular;
+  line-height: 1.5;
+  letter-spacing: .5px;
+  color: $color__black;
+  background: $color__white;
+}

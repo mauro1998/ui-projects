@@ -1,0 +1,19 @@
+<div class="carousel__container">
+  <div class="carousel" [style.height]="height">
+    <div class="carousel__item"
+      *ngFor="let item of items; let i = index"
+      [@slide]="states[i]">
+      <ng-template
+        [ngTemplateOutlet]="template"
+        [ngTemplateOutletContext]="{$implicit: item, index: i, selectedIndex: childIndex}"
+      ></ng-template>
+    </div>
+
+    <div class="carousel__circles" *ngIf="states.length">
+      <div class="carousel__circle"
+        *ngFor="let state of states"
+        [class.active]="state === 'active'">
+      </div>
+    </div>
+  </div>
+</div>

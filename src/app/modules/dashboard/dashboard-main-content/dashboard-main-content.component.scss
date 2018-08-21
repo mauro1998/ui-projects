@@ -1,0 +1,22 @@
+@import "../common";
+.page-content {
+  margin-left: $aside_width;
+  main.main-content {
+    padding-left: $unit;
+    padding-right: $unit;
+    header.section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .carrousel {
+      @include clearfix();
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+  }
+  ul.profile-views {
+    width: 28em;
+  }
+}

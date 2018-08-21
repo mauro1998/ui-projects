@@ -1,0 +1,9 @@
+<div class="alert" [ngClass]="getCSSClasses()" #alert>
+  <a class="btn__close" (click)="alert.remove()">
+    <i class="material-icons xs">close</i>
+  </a>
+  <p>
+    <strong *ngIf="boldText">{{boldText}}</strong>
+    {{text}}
+  </p>
+</div>

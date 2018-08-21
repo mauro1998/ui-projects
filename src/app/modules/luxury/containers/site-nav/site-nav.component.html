@@ -1,0 +1,11 @@
+<div class="site__nav__container">
+  <div class="sticky__site__nav" [class.sticky]="sticky$ | async" #sticky>
+    <div class="container">
+      <nav class="site__nav">
+        <div class="nav__items">
+          <ng-content></ng-content>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

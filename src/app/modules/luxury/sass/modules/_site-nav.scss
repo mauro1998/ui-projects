@@ -1,0 +1,54 @@
+$height: $unit * 3;
+.site__nav__container {
+  @include clearfix();
+  display: block;
+  height: $height;
+}
+
+.sticky__site__nav {
+  position: relative;
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: $color__white;
+    border-bottom: 1px solid $color__offwhite;
+  }
+}
+
+.site__nav {
+  height: $height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .nav__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a.link {
+      display: block;
+      height: $height;
+      line-height: $height;
+      text-transform: uppercase !important;
+      margin-left: $unit;
+      white-space: nowrap;
+      font-size: $unit*.8;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    a.menu {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    a.shopping__cart {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}

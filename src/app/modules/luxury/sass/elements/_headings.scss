@@ -1,0 +1,51 @@
+// H1
+h1, .h1 {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @extend %sans--bold;
+}
+
+// H2
+h2, .h2 {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @extend %sans--bold;
+}
+
+// H3
+h3, .h3 {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @extend %sans--bold;
+}
+
+// H4
+h4, .h4 {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @extend %sans--bold;
+}
+
+// H5
+h5, .h5 {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @extend %sans--bold;
+}
+
+// H6
+h6, .h6 {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @extend %sans--bold;
+}
+
+.color--gold {
+  color: $color__gold;
+}

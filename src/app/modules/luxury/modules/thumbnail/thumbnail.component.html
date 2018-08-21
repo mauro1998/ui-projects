@@ -1,0 +1,7 @@
+<a class="thumbnail" [class.transparent]="transparent">
+  <img class="thumbnail__media" src="{{src}}">
+  <div *ngIf="title || text" class="thumbnail__caption">
+    <h3>{{title}}</h3>
+    <p>{{text}}</p>
+  </div>
+</a>

@@ -1,0 +1,11 @@
+<div class="carrousel-item" [class.large]="large">
+  <div class="picture">
+    <a href="#" class="img" [ngStyle]="{ backgroundImage: 'url(' + item.url + ')' }"></a>
+  </div>
+  <div class="info">
+    <a href="#" class="link">
+      <h3>{{item.name}}</h3>
+    </a>
+    <span>{{item.description}}</span>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.page {
+  position: relative;
+}
+
+// The header
+.page__header {
+  background: rgba(0, 0, 0, .025);
+}
+
+// The footer
+.page__footer {}
+
+section {
+  border-bottom: 1px solid rgba($color__grey--light, .5);
+  padding: 2*$unit 0;
+  display: block;
+  position: relative;
+  text-align: left;
+}

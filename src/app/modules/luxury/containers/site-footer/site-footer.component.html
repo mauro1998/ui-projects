@@ -1,0 +1,33 @@
+<div class="site-footer">
+  <div class="container">
+    <div class="footer__links">
+      <div class="gw md-four-up two-up">
+        <div class="g" *ngFor="let section of sections">
+          <h5>{{section.title}}</h5>
+          <a class="link" *ngFor="let link of section.links" routerLink="{{link.href}}">{{link.text}}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment__methods">
+      <img class="img--natural" draggable="false" src="assets/images/luxury/payment/1.png">
+      <img class="img--natural" draggable="false" src="assets/images/luxury/payment/2.png">
+      <img class="img--natural" draggable="false" src="assets/images/luxury/payment/3.png">
+      <img class="img--natural" draggable="false" src="assets/images/luxury/payment/4.png">
+      <img class="img--natural" draggable="false" src="assets/images/luxury/payment/5.png">
+    </div>
+
+    <div class="branding__info">
+      <a class="branding" routerLink="/">
+        <span class="h1 branding__logo--text">
+          Watch–Z
+        </span>
+        <span class="h2 branding__wordmark">El tiempo avanza</span>
+      </a>
+      <span class="copyright">
+        Copyright <i class="material-icons">copyright</i> 2018, Watch-Z inc. Todos los derechos reservados
+        <br> eCommerce by <a href="https://mabcoder.com" class="link">Mauro Aguilar</a>
+      </span>
+    </div>
+  </div>
+</div>

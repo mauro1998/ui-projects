@@ -1,0 +1,38 @@
+@import "../common";
+aside.aside-navbar {
+  width: $aside_width;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $secondary_color;
+  z-index: 100;
+  padding: $unit;
+  box-shadow: 0px 0px 10px 1px $color__navy;
+  ol.menu-container {
+    @include clearfix();
+    list-style: none;
+    li.menu--item {
+      display: block;
+      padding: $unit*.5 0;
+      &.menu--heading {
+        position: relative;
+        span.settings-icon {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          font-size: $unit;
+        }
+      }
+    }
+  }
+  hr {
+    margin-top: $unit*2;
+    margin-bottom: $unit*2;
+    border-color: rgba($off_white_color, .5);
+  }
+}

@@ -1,0 +1,24 @@
+<dashboard-container>
+  <dashboard-aside></dashboard-aside>
+  <dashboard-main-content>
+    <dashboard-navbar navbar
+      [url]="profilePic">
+    </dashboard-navbar>
+
+    <dashboard-carrousel-item models
+      *ngFor="let item of models"
+      [item]="item">
+    </dashboard-carrousel-item>
+
+    <dashboard-view-item views
+      *ngFor="let item of profileViews"
+      [item]="item">
+    </dashboard-view-item>
+
+    <dashboard-carrousel-item featured
+      *ngFor="let item of featuredModels"
+      [item]="item"
+      [large]="true">
+    </dashboard-carrousel-item>
+  </dashboard-main-content>
+</dashboard-container>

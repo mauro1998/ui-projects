@@ -1,0 +1,47 @@
+@import "../common";
+.carrousel-item {
+  margin-right: $unit;
+  &:hover .picture {
+    opacity: 1;
+  }
+  .picture {
+    width: 15em;
+    padding-bottom: 100%;
+    background: $secondary_color;
+    position: relative;
+    margin-bottom: 1em;
+    opacity: 0.9;
+    transition: .5s opacity ease;
+    .img {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  .info {
+    a.link {
+      display: block;
+    }
+  }
+  &.large {
+    .picture {
+      width: 25em;
+      padding-bottom: 75%;
+    }
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        font-size: .9em;
+      }
+    }
+  }
+}

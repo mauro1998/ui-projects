@@ -1,0 +1,61 @@
+/**
+
+  @heroes
+--------------------------------------------------------
+  modules/_heroes.scss
+--------------------------------------------------------
+
+  Just your everyday, normal hero.  Contains a div that has
+  the media (video or image) in the background, and a div
+  for the main content.
+
+  Example: Hero
+  <div class="hero">
+    <div class="hero__main">
+      <h1 class="hero__leadin">This is the leadin</h1>
+      <h2 class="hero__name">Name Here</h2>
+    <div class="hero__media"><img src="http://fillmurray.com/1000/400"></div>
+  </div>
+------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__media {
+  height: 77vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero__main {
+  position: absolute;
+  font-size: $unit*1.1;
+  color: white;
+  width: 100%;
+  top: 0;
+  &.x-side--right {
+    text-align: right;
+  }
+  &.y-side--top {
+    margin-top: 2*$unit;
+  }
+  &.x-side--center {
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, 0);
+  }
+  &.y-side--center {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  &.centered {
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}

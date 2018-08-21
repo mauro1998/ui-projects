@@ -1,0 +1,34 @@
+/* @thumbnails */
+
+.thumbnail {
+  @include clearfix();
+  background: rgba($color__grey--light, .3);
+  text-decoration: none;
+  display: block;
+  &.transparent {
+    background: transparent;
+  }
+}
+
+.thumbnail__media {}
+
+.thumbnail__caption {
+  font-size: 85%;
+  padding-left: $unit*0.8;
+  padding-right: $unit*0.8;
+  padding-bottom: $unit*0.5;
+  padding-top: $unit*0.5;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5 {
+    margin-bottom: .25*$unit;
+    font-size: 1em;
+  }
+  p {
+    margin: 0;
+    font-size: .9em;
+  }
+}

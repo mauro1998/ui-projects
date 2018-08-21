@@ -1,0 +1,41 @@
+/* @callouts */
+
+.callout {
+  text-align: center;
+  p {
+    font-size: .9em;
+  }
+}
+
+.callout__media {
+  display: block;
+  margin: 0 auto 1*$unit;
+  max-height: 3em;
+  width: auto;
+  &.size--sm {
+    max-height: 6em;
+  }
+  &.size--md {
+    max-height: 9em;
+  }
+  &.size--lg {
+    max-height: 12em;
+  }
+  &.size--force {
+    height: 3em;
+    &.size--sm {
+      height: 6em;
+    }
+    &.size--md {
+      height: 9em;
+    }
+    &.size--lg {
+      height: 12em;
+    }
+  }
+}
+
+.callout__title {
+  font-size: 1em;
+  margin-bottom: $unit*0.3;
+}

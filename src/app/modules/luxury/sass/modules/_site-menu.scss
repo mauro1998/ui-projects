@@ -1,0 +1,33 @@
+.header__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($color__navy, .9);
+  color: $color__offwhite;
+  z-index: 300;
+
+  a.close {
+    position: absolute;
+    top: $unit;
+    right: $unit;
+  }
+
+  article {
+    text-align: center;
+    margin-top: $unit*2;
+    max-width: $breakpoint__md;
+
+    ul {
+      display: block;
+      list-style: none;
+      li a {
+        font-size: $unit*1.4;
+        &:hover {
+          text-shadow: 0px 0px 15px $color__grey;
+        }
+      }
+    }
+  }
+}

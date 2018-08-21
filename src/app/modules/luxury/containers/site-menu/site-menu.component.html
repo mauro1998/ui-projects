@@ -1,0 +1,17 @@
+<div class="header__menu" [hidden]="hidden$ | async">
+  <a class="close" (click)="hidden$.next(true)">
+    <i class="material-icons lg">close</i>
+  </a>
+  <article>
+    <h1 class="block">Menú</h1>
+    <div class="gw sm-two-up">
+      <div class="g" *ngFor="let items of menu">
+        <ul>
+          <li *ngFor="let item of items">
+            <a class="link" [routerLink]="item.href">{{item.text}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</div>

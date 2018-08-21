@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,400,700');
+
+$sans: 'IBM Plex Sans', sans-serif;
+
+%sans--light {
+  font-family: $sans;
+  font-weight: 100;
+  font-style: normal;
+}
+
+%sans--regular {
+  font-family: $sans;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%sans--bold {
+  font-family: $sans;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@import "icons";

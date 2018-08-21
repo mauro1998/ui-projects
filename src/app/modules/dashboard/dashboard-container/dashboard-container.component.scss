@@ -1,0 +1,120 @@
+@import "../../../sass/reset";
+@import "../common";
+@import "../../../sass/modules/buttons";
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $main_color;
+  @extend %raleway--regular;
+  font-size: 14px;
+  color: $text_color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %raleway--bold;
+  letter-spacing: .3px;
+  color: $off_white_color;
+}
+
+input {
+  display: block;
+  padding: $unit*.9 $unit;
+  background: transparent;
+  color: $off_white_color;
+  border: 0 none;
+  outline: none;
+  font-size: 1em;
+}
+
+::placeholder {
+  color: $off_white_color;
+}
+
+::-webkit-input-placeholder {
+  color: $off_white_color;
+}
+
+::-moz-placeholder {
+  color: $off_white_color;
+}
+
+:-ms-input-placeholder {
+  color: $off_white_color;
+}
+
+:-moz-placeholder {
+  color: $off_white_color;
+}
+
+a {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: $text_color;
+  &:hover {
+    color: $off_white_color;
+  }
+}
+
+.page {
+  position: relative;
+  min-width: $breakpoint__xl;
+}
+
+button {
+  background: transparent;
+  color: $off_white_color;
+  outline: none;
+  font-size: 1em;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  border: 0 none;
+  padding: $unit*.6 $unit*.8;
+  background: $color__navy;
+  cursor: pointer;
+  &.btn--primary {
+    background: $secondary_color;
+    transition: .2s background ease;
+    &:hover {
+      background: $purple_color;
+    }
+    &:active {
+      background: #461d63;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  section:first-child {
+    margin-right: $unit;
+  }
+  section:last-child {
+    overflow: hidden;
+  }
+}
+
+ol,
+ul {
+  @include clearfix();
+  li {
+    @include clearfix();
+    list-style: none;
+    display: block;
+  }
+}

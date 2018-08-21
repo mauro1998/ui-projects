@@ -1,0 +1,47 @@
+<div class="page-content">
+  <ng-content select="[navbar]"></ng-content>
+  <main class="main-content">
+    <section class="block">
+      <header class="section-header block">
+        <h2>Models</h2>
+        <div class="control-buttons">
+          <button class="btn btn--primary">
+            <span class="fa fa-chevron-left"></span>
+          </button>
+          <button class="btn btn--primary">
+            <span class="fa fa-chevron-right"></span>
+          </button>
+        </div>
+      </header>
+      <div class="carrousel">
+        <ng-content select="[models]"></ng-content>
+      </div>
+    </section>
+    <div class="row">
+      <section class="block">
+        <div class="block">
+          <h2>Profile Views</h2>
+        </div>
+        <ul class="profile-views">
+          <ng-content select="[views]"></ng-content>
+        </ul>
+      </section>
+      <section class="block">
+        <header class="section-header block">
+          <h2>Featured Models</h2>
+          <div class="control-buttons">
+            <button class="btn btn--primary">
+              <span class="fa fa-chevron-left"></span>
+            </button>
+            <button class="btn btn--primary">
+              <span class="fa fa-chevron-right"></span>
+            </button>
+          </div>
+        </header>
+        <div class="featured-models carrousel">
+          <ng-content select="[featured]"></ng-content>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>

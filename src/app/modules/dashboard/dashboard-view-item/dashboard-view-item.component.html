@@ -1,0 +1,14 @@
+<li class="profile-view">
+  <a class="view">
+    <div class="profile-data">
+      <div class="profile-picture" [ngStyle]="{ backgroundImage: 'url('+ item.url +')' }"></div>
+      <div class="data">
+        <h4 class="name">{{item.name}}</h4>
+        <span class="last-time">{{item.time}}</span>
+      </div>
+    </div>
+    <div class="date">
+      {{item.date}}
+    </div>
+  </a>
+</li>

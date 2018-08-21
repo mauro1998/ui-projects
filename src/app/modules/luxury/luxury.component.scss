@@ -1,0 +1,37 @@
+.side {
+  display: flex;
+  align-items: center;
+  span.date {
+    margin-left: 1em;
+    font-size: .8em;
+  }
+}
+
+.shopping__cart {
+  margin-left: 1em;
+  width: 2.2em;
+  text-align: left;
+  color: #aaa;
+  .cart__icon {
+    position: relative;
+    span {
+      position: absolute;
+      bottom: 60%;
+      left: 60%;
+      background: #eec745;
+      color: #FFF;
+      width: 1.6em;
+      height: 1.6em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: .8em;
+      font-weight: bold;
+    }
+  }
+}
+
+article {
+  text-align: center;
+}

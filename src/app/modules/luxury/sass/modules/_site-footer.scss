@@ -1,0 +1,51 @@
+/**
+
+  @site-footer
+--------------------------------------------------------
+  modules/_site-footer.scss
+--------------------------------------------------------
+
+  The site's global footer
+
+------------------------------------------------------ */
+
+.site-footer {
+  padding: 1*$unit 0;
+  min-height: 50vh;
+  @include bp-until($breakpoint__md) {
+    text-align: center;
+  }
+  .footer__links {
+    .link {
+      display: block;
+      font-size: $unit*.8;
+    }
+  }
+  .payment__methods {
+    text-align: center;
+    clear: both;
+    img {
+      width: $unit*4;
+    }
+  }
+  .branding__info {
+    text-align: center;
+    .branding {
+      clear: both;
+      position: relative;
+      height: $unit*4;
+    }
+    .copyright {
+      font-size: $unit*.6;
+      i {
+        font-size: $unit;
+      }
+    }
+  }
+}
+
+// Credits
+.site-credits {
+  display: block;
+  clear: both;
+}
