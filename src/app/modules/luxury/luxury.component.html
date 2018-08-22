@@ -2,16 +2,18 @@
 <lux-site>
   <lux-site-header>
     <div class="side">
-      <a class="link" (click)="menuHidden$.next(false)">
+      <a
+        class="link"
+        (click)="menuHidden$.next(false)">
         <i class="material-icons">menu</i>
       </a>
       <span class="date">{{getDate()}}</span>
     </div>
 
-    <a class="branding hide__sm" routerLink="/">
-      <span class="h1 branding__logo--text">
-        Watch–Z
-      </span>
+    <a
+      class="branding hide__sm"
+      routerLink="/">
+      <span class="h1 branding__logo--text">Watch–Z</span>
       <span class="h2 branding__wordmark">El tiempo avanza</span>
     </a>
 
@@ -19,17 +21,20 @@
       <a class="btn btn--secondary">Ingresar</a>
       <a class="shopping__cart">
         <span class="cart__icon">
-          <i class="material-icons">
-            shopping_cart
-          </i>
+          <i class="material-icons">shopping_cart</i>
           <span class="counter">0</span>
         </span>
       </a>
     </div>
   </lux-site-header>
 
-  <lux-site-nav #nav class="hide__sm">
-    <a class="link menu" (click)="menuHidden$.next(false)" [class.is-hidden]="!(nav.sticky$ | async)">
+  <lux-site-nav
+    #nav
+    class="hide__sm">
+    <a
+      class="link menu"
+      (click)="menuHidden$.next(false)"
+      [class.is-hidden]="!(nav.sticky$ | async)">
       <i class="material-icons">menu</i>
     </a>
     <a class="link">Explorar</a>
@@ -38,45 +43,82 @@
     <a class="link">Mujer</a>
     <a class="link">Lo último</a>
     <a class="link">Vender reloj</a>
-    <a class="link shopping__cart" [class.is-hidden]="!(nav.sticky$ | async)">
+    <a
+      class="link shopping__cart"
+      [class.is-hidden]="!(nav.sticky$ | async)">
       <span class="cart__icon">
-        <i class="material-icons">
-          shopping_cart
-        </i>
+        <i class="material-icons">shopping_cart</i>
         <span class="counter">0</span>
       </span>
     </a>
   </lux-site-nav>
 
-  <lux-site-menu [menu]="menu" [hidden]="menuHidden$"></lux-site-menu>
+  <lux-site-menu
+    [menu]="menu"
+    [hidden]="menuHidden$"></lux-site-menu>
 
   <lux-site-main>
     <lux-page>
-      <lux-hero [opacity]="0.4" [src]="'assets/images/luxury/hero.jpg'">
-        <div class="container">
-          <h1 class="hero__leadin">Cientos de diseños<br>Encuentra el tuyo</h1>
-          <p class="h4">
-            Explora nuestro gran catálogo de relojes.<br>Cientos de diseños de las marcas más populares.<br>Descubre el reloj
-            perfecto para ti.
-          </p>
-          <button class="btn">Explorar</button>
-        </div>
-      </lux-hero>
+      <ng-template
+        let-item
+        #heroTemplate>
+        <lux-hero
+          [opacity]="item.opacity"
+          [src]="item.src">
+          <div class="container">
+            <p>
+              <span
+                class="hero__leadin h1"
+                *ngIf="item.leadin">
+                {{item.leadin}}
+              </span>
+            </p>
+            <p class="h5">
+              <span *ngFor="let text of item.text">
+                {{text}}
+                <br>
+              </span>
+            </p>
+            <button
+              class="btn"
+              *ngIf="item.action">
+              {{item.action}}
+            </button>
+          </div>
+        </lux-hero>
+      </ng-template>
+      <lux-carousel
+        [items]="carouselItems"
+        [options]="{ autoplay: true }"
+        [template]="heroTemplate">
+      </lux-carousel>
 
       <lux-section [highlight]="true">
         <h2 class="text-center block">Disfruta de nuestros beneficios</h2>
 
         <div class="gw sm-three-up block">
           <div class="g">
-            <lux-callout [size]="'md'" [src]="'assets/images/luxury/buyers-protection.svg'" [title]="'Protección al comprador'" [text]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias error incidunt corporis? A rerum maiores nesciunt sunt recusandae provident aliquam harum, consectetur saepe! Porro voluptate modi eum est. Sapiente?'">
+            <lux-callout
+              [size]="'md'"
+              [src]="'assets/images/luxury/buyers-protection.svg'"
+              [title]="'Protección al comprador'"
+              [text]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias error incidunt corporis? A rerum maiores nesciunt sunt recusandae provident aliquam harum, consectetur saepe! Porro voluptate modi eum est. Sapiente?'">
             </lux-callout>
           </div>
           <div class="g">
-            <lux-callout [size]="'md'" [src]="'assets/images/luxury/worldwide-watches.svg'" [title]="'Entregas a todo el país'" [text]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias error incidunt corporis? A rerum maiores nesciunt sunt recusandae provident aliquam harum, consectetur saepe! Porro voluptate modi eum est. Sapiente?'">
+            <lux-callout
+              [size]="'md'"
+              [src]="'assets/images/luxury/worldwide-watches.svg'"
+              [title]="'Entregas a todo el país'"
+              [text]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias error incidunt corporis? A rerum maiores nesciunt sunt recusandae provident aliquam harum, consectetur saepe! Porro voluptate modi eum est. Sapiente?'">
             </lux-callout>
           </div>
           <div class="g">
-            <lux-callout [size]="'md'" [src]="'assets/images/luxury/love-my-watch.svg'" [title]="'Calidad garantizada'" [text]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias error incidunt corporis? A rerum maiores nesciunt sunt recusandae provident aliquam harum, consectetur saepe! Porro voluptate modi eum est. Sapiente?'">
+            <lux-callout
+              [size]="'md'"
+              [src]="'assets/images/luxury/love-my-watch.svg'"
+              [title]="'Calidad garantizada'"
+              [text]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias error incidunt corporis? A rerum maiores nesciunt sunt recusandae provident aliquam harum, consectetur saepe! Porro voluptate modi eum est. Sapiente?'">
             </lux-callout>
           </div>
         </div>
@@ -87,22 +129,17 @@
       </lux-section>
 
       <lux-section>
-        <ng-template let-item #heroes>
-          <lux-hero [src]="item"></lux-hero>
-        </ng-template>
-        <lux-carousel
-          [items]="['assets/images/luxury/hero.jpg', 'assets/images/luxury/hero.jpg']"
-          [interval]="5000"
-          [template]="heroes">
-        </lux-carousel>
-      </lux-section>
-
-      <lux-section>
         <h2 class="text-center">Marcas populares</h2>
 
         <div class="gw sm-two-up md-four-up block">
-          <div class="g" *ngFor="let thumbnail of thumbnails">
-            <lux-thumbnail [src]="thumbnail.src" [title]="thumbnail.title" [text]="thumbnail.text" (click)="log(thumbnail)">
+          <div
+            class="g"
+            *ngFor="let thumbnail of thumbnails">
+            <lux-thumbnail
+              [src]="thumbnail.src"
+              [title]="thumbnail.title"
+              [text]="thumbnail.text"
+              (click)="log(thumbnail)">
             </lux-thumbnail>
           </div>
         </div>
@@ -116,8 +153,13 @@
         <h2 class="text-center">Callouts</h2>
 
         <div class="gw sm-two-up md-four-up">
-          <div class="g" *ngFor="let callout of callouts">
-            <lux-callout [src]="callout.src" [title]="callout.title" [text]="callout.text">
+          <div
+            class="g"
+            *ngFor="let callout of callouts">
+            <lux-callout
+              [src]="callout.src"
+              [title]="callout.title"
+              [text]="callout.text">
             </lux-callout>
           </div>
         </div>

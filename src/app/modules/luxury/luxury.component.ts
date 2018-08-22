@@ -13,6 +13,7 @@ export class LuxuryComponent implements OnInit {
   thumbnails: any[];
   previews: any[];
   footerInfo: any[];
+  carouselItems: any[];
   menuHidden$ = new BehaviorSubject<boolean>(true);
   modalHidden$ = new BehaviorSubject<boolean>(true);
 
@@ -135,6 +136,24 @@ export class LuxuryComponent implements OnInit {
         ]
       },
     ]
+
+    this.carouselItems = [
+      {
+        src: 'assets/images/luxury/hero.jpg',
+        leadin: 'Cientos de diseños',
+        opacity: 0.4,
+        text: [
+          'Explora nuestro gran catálogo de relojes.',
+          'Cientos de diseños de las marcas más populares.',
+          'Descubre el reloj perfecto para ti.',
+        ],
+        action: 'Explorar'
+      },
+    ];
+
+    for (let i = 0; i < 5; i++) {
+      this.carouselItems.push(this.carouselItems[0]);
+    }
   }
 
   log(...args) {

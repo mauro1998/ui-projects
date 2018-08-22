@@ -1,51 +1,101 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, ViewChildren, AfterViewInit, QueryList, ElementRef } from '@angular/core';
 import { trigger, transition, state, style, animate } from '@angular/animations';
-import { interval } from 'rxjs/observable/interval';
-import 'rxjs/add/operator/map';
+import 'rxjs/Rx';
+import { Subject, BehaviorSubject, Observable } from 'rxjs/Rx';
+
+const SLIDE = {
+  NAME: 'slide',
+  UP: 'up',
+  DOWN: 'down',
+}
+
+interface AnimationOptions {
+  autoplay: boolean,
+  autoplayInterval: number,
+  easing: string,
+  duration: number,
+}
+
+const defaults: AnimationOptions = {
+  autoplay: false,
+  autoplayInterval: 5000,
+  easing: 'ease',
+  duration: 1000
+}
 
 @Component({
   selector: 'lux-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
   animations: [
-    trigger('slide', [
-      state('active', style({ left: '0%' })),
-      state('inactive', style({ left: '100%' })),
-      transition('active => inactive', [
-        animate('1s ease', style({ left: '-100%' }))
-      ]),
-      transition('inactive => active', [
-        animate('1s ease')
+    trigger(SLIDE.NAME, [
+      state(SLIDE.UP, style({ bottom: '0', opacity: 1 })),
+      state(SLIDE.DOWN, style({ bottom: '-110%', opacity: 0 })),
+      transition(`${SLIDE.DOWN} <=> ${SLIDE.UP}`, [
+        animate('.3s ease')
       ]),
     ])
   ]
 })
-export class CarouselComponent implements OnInit {
-  @Input() height = '20em';
+export class CarouselComponent implements OnInit, AfterViewInit {
   @Input() items = [];
-  @Input() interval = 0;
   @Input() template: TemplateRef<any>;
-  private states = [];
+  @Input() options: AnimationOptions = <AnimationOptions>{};
 
-  constructor() { }
+  @ViewChildren('templateItems') templateRefs: QueryList<ElementRef>;
+
+  private items$ = new Subject<HTMLElement[]>();
+  private index$ = new Subject<number>();
+  private state$ = new BehaviorSubject(SLIDE.DOWN);
+
+  amount$: Observable<number>;
+  index: number = 0;
 
   ngOnInit() {
-    for (let i = 0; i < this.items.length; i++) {
-      this.states.push(i === 0 ? 'active' : 'inactive');
-    }
-
-    this.setInterval();
+    this.options = Object.assign({}, defaults, this.options);
+    this.amount$ = this.items$.combineLatest(
+      this.index$
+        .throttleTime(this.options.duration)
+        .pairwise()
+        .distinctUntilChanged()
+    ).scan((amount, [items, [lastIndex, index]]) => {
+      this.index = index;
+      return amount + (items[index].offsetWidth * (lastIndex - index));
+    }, 0);
   }
 
-  setInterval() {
-    if (!this.interval) return;
-    interval(this.interval)
-      .map((n) => Math.floor((n + 1) % this.states.length))
-      .subscribe((index) => {
-        const i = index === 0 ? this.states.length - 1 : index - 1;
-        this.states[i] = 'inactive';
-        this.states[index] = 'active';
-      });
+  ngAfterViewInit() {
+    const items = this.templateRefs.map(el => el.nativeElement);
+    this.items$.next(items);
+    this.index$.next(this.index);
+    this.autoPlay();
   }
 
+  showPrevious() {
+    this.index$.next(this.index - 1);
+  }
+
+  showNext() {
+    this.index$.next(this.index + 1);
+  }
+
+  autoPlay() {
+    if (!this.options.autoplay) return;
+    const interval = this.options.duration + this.options.autoplayInterval;
+    Observable.interval(interval)
+      .map((n) => Math.floor((n + 1) % this.items.length))
+      .subscribe((index) => this.index$.next(index));
+  }
+
+  changeButtonState(state) {
+    this.state$.next(state);
+  }
+
+  get isFirstItem() {
+    return this.index === 0;
+  }
+
+  get isLastItem() {
+    return this.index === (this.items.length - 1);
+  }
 }

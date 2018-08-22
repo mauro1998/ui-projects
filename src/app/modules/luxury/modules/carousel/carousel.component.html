@@ -1,19 +1,44 @@
-<div class="carousel__container">
-  <div class="carousel" [style.height]="height">
-    <div class="carousel__item"
-      *ngFor="let item of items; let i = index"
-      [@slide]="states[i]">
+<div
+  class="carousel__container"
+  (mouseenter)="changeButtonState('up')"
+  (mouseleave)="changeButtonState('down')">
+  <div
+    class="carousel"
+    [style.transform]="'translateX(' + (amount$ | async) + 'px)'"
+    [style.transition-duration]="options.duration + 'ms'"
+    [style.transition-timing-function]="options.easing">
+    <div
+      class="carousel__item"
+      #templateItems
+      *ngFor="let item of items; let i = index">
       <ng-template
         [ngTemplateOutlet]="template"
-        [ngTemplateOutletContext]="{$implicit: item, index: i, selectedIndex: childIndex}"
-      ></ng-template>
-    </div>
-
-    <div class="carousel__circles" *ngIf="states.length">
-      <div class="carousel__circle"
-        *ngFor="let state of states"
-        [class.active]="state === 'active'">
-      </div>
+        [ngTemplateOutletContext]="{$implicit: item, index: i}"></ng-template>
     </div>
   </div>
+  <div
+    class="carousel__circles"
+    *ngIf="items.length">
+    <div
+      class="carousel__circle"
+      *ngFor="let item of items; let i = index"
+      [class.active]="i === index">
+    </div>
+  </div>
+
+  <button
+    class="btn btn--icon btn--white carousel__action left"
+    [@slide]="state$ | async"
+    (click)="showPrevious()"
+    [disabled]="isFirstItem">
+    <i class="material-icons">chevron_left</i>
+  </button>
+
+  <button
+    class="btn btn--icon btn--white carousel__action right"
+    [@slide]="state$ | async"
+    (click)="showNext()"
+    [disabled]="isLastItem">
+    <i class="material-icons">chevron_right</i>
+  </button>
 </div>
