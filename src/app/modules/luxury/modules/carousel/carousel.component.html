@@ -4,7 +4,7 @@
   (mouseleave)="changeButtonState('down')">
   <div
     class="carousel"
-    [style.transform]="'translateX(' + (amount$ | async) + 'px)'"
+    [style.transform]="'translateX(' + (percent$ | async) + '%)'"
     [style.transition-duration]="options.duration + 'ms'"
     [style.transition-timing-function]="options.easing">
     <div
@@ -22,7 +22,8 @@
     <div
       class="carousel__circle"
       *ngFor="let item of items; let i = index"
-      [class.active]="i === index">
+      [class.active]="i === index"
+      (click)="showCustom(i)">
     </div>
   </div>
 

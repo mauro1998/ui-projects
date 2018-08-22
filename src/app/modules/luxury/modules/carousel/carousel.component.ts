@@ -46,45 +46,50 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   private items$ = new Subject<HTMLElement[]>();
   private index$ = new Subject<number>();
+  private switch$ = new Subject<boolean>();
   private state$ = new BehaviorSubject(SLIDE.DOWN);
 
-  amount$: Observable<number>;
+  percent$: Observable<number>;
   index: number = 0;
 
   ngOnInit() {
     this.options = Object.assign({}, defaults, this.options);
-    this.amount$ = this.items$.combineLatest(
+    this.percent$ = this.items$.combineLatest(
       this.index$
         .throttleTime(this.options.duration)
-        .pairwise()
         .distinctUntilChanged()
-    ).scan((amount, [items, [lastIndex, index]]) => {
+    ).map(([items, index]) => {
       this.index = index;
-      return amount + (items[index].offsetWidth * (lastIndex - index));
-    }, 0);
+      return -(index * (100 * items.length) / items.length);
+    });
   }
 
   ngAfterViewInit() {
     const items = this.templateRefs.map(el => el.nativeElement);
     this.items$.next(items);
-    this.index$.next(this.index);
     this.autoPlay();
   }
 
+  showCustom(index) {
+    this.index$.next(index);
+    this.switch$.next(true);
+  }
+
   showPrevious() {
-    this.index$.next(this.index - 1);
+    this.showCustom(this.index - 1);
   }
 
   showNext() {
-    this.index$.next(this.index + 1);
+    this.showCustom(this.index + 1);
   }
 
   autoPlay() {
     if (!this.options.autoplay) return;
     const interval = this.options.duration + this.options.autoplayInterval;
-    Observable.interval(interval)
-      .map((n) => Math.floor((n + 1) % this.items.length))
+    this.switch$.switchMap(() => Observable.interval(interval))
+      .map(() => (this.index + 1) % this.items.length)
       .subscribe((index) => this.index$.next(index));
+    this.switch$.next(true);
   }
 
   changeButtonState(state) {

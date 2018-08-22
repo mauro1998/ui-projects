@@ -32,11 +32,23 @@
       margin-left: $unit;
       margin-top: $unit;
       transition: 1s background ease;
+      position: relative;
+      cursor: pointer;
       &:first-child {
         margin-left: 0;
       }
       &.active {
         background: $color__white;
+      }
+      &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transform: scale(2.5);
       }
     }
   }
