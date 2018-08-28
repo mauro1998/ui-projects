@@ -1,0 +1,15 @@
+@import "../../sass/utils";
+.range__display {
+  font-size: .7em;
+  font-weight: bold;
+  color: $color__grey;
+}
+
+.filter__section {
+  margin-bottom: $unit;
+  h5 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: $unit;
+    margin-bottom: $unit;
+  }
+}

@@ -1,5 +1,9 @@
-<section [class.page__header]="highlight">
-  <div class="container" [class.container--fluid]="fluid">
+<section
+  [class.page__header]="highlight"
+  [ngClass]="padding ? 'pd-' + padding + '-tb' : ''">
+  <div
+    class="container"
+    [class.container--fluid]="fluid">
     <ng-content></ng-content>
   </div>
 </section>

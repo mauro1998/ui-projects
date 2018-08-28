@@ -1,0 +1,40 @@
+<div
+  class="filter__section"
+  *ngFor="let filter of filters; index as i">
+  <h5>{{filter.title}}</h5>
+  <fieldset>
+    <article class="field">
+      <div
+        class="custom__control custom__checkbox"
+        *ngFor="let item of filter.items; index as j">
+        <input
+          class="control__input"
+          type="checkbox"
+          id="checkbox_{{i}}_{{j}}">
+        <label
+          class="custom__control__label label--checkbox"
+          for="checkbox_{{i}}_{{j}}">
+          {{item}}
+        </label>
+      </div>
+    </article>
+  </fieldset>
+</div>
+
+<div class="filter__section">
+  <h5>Rango de precio</h5>
+  <fieldset>
+    <article class="field">
+      <lux-input-range
+        [from]="30000"
+        [to]="1000000"
+        (onRangeChange)="onRangeChange($event)"></lux-input-range>
+
+      <div class="space__between">
+        <button class="btn btn--small">Filtrar</button>
+        <div class="range__display">{{range$ | async}}</div>
+      </div>
+
+    </article>
+  </fieldset>
+</div>

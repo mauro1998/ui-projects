@@ -1,0 +1,24 @@
+<div class="custom__control custom__range">
+  <div class="custom__range__container">
+    <div
+      class="control__range"
+      #range>
+      <div
+        #from
+        class="from"
+        [ngStyle]="{ left: (left$ | async) + '%' }">
+        <div
+          class="range__handle"
+          (mousedown)="onMouseDown($event)"></div>
+      </div>
+      <div
+        #to
+        class="to"
+        [ngStyle]="{ left: (right$ | async) + '%' }">
+        <div
+          class="range__handle"
+          (mousedown)="onMouseDown($event)"></div>
+      </div>
+    </div>
+  </div>
+</div>

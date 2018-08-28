@@ -1,0 +1,30 @@
+@import "../../sass/utils";
+.catalog__container {
+  @include clearfix();
+  position: relative;
+  display: flex;
+}
+
+.filters__section {
+  @include clearfix();
+  flex-basis: 16em;
+  flex-shrink: 0;
+  padding: 0;
+  padding-right: $unit;
+}
+
+.products__section {
+  @include clearfix();
+  margin-left: $unit;
+  flex-grow: 1;
+}
+
+.group {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  h5 {
+    margin-right: .5em;
+    margin-bottom: 0;
+  }
+}

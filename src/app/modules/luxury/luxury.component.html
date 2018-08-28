@@ -37,12 +37,36 @@
       [class.is-hidden]="!(nav.sticky$ | async)">
       <i class="material-icons">menu</i>
     </a>
-    <a class="link">Explorar</a>
-    <a class="link">Marcas</a>
-    <a class="link">Hombre</a>
-    <a class="link">Mujer</a>
-    <a class="link">Lo último</a>
-    <a class="link">Vender reloj</a>
+    <a
+      routerLink="/catalog"
+      class="link">
+      Explorar
+    </a>
+    <a
+      routerLink="/catalog"
+      class="link">
+      Marcas
+    </a>
+    <a
+      routerLink="/catalog"
+      class="link">
+      Hombre
+    </a>
+    <a
+      routerLink="/catalog"
+      class="link">
+      Mujer
+    </a>
+    <a
+      routerLink="/catalog"
+      class="link">
+      Lo último
+    </a>
+    <a
+      routerLink="/catalog"
+      class="link">
+      Vender reloj
+    </a>
     <a
       class="link shopping__cart"
       [class.is-hidden]="!(nav.sticky$ | async)">
@@ -57,260 +81,104 @@
     [menu]="menu"
     [hidden]="menuHidden$"></lux-site-menu>
 
+  <lux-breadcrumbs></lux-breadcrumbs>
+
   <lux-site-main>
     <lux-page>
-      <ng-template
-        let-item
-        #heroTemplate>
-        <lux-hero
-          [opacity]="item.opacity"
-          [src]="item.src">
-          <div class="container">
-            <p>
-              <span
-                class="hero__leadin h1"
-                *ngIf="item.leadin">
-                {{item.leadin}}
-              </span>
-            </p>
-            <p class="h5">
-              <span *ngFor="let text of item.text">
-                {{text}}
-                <br>
-              </span>
-            </p>
-            <button
-              class="btn"
-              *ngIf="item.action">
-              {{item.action}}
-            </button>
-          </div>
-        </lux-hero>
-      </ng-template>
-      <lux-carousel
-        [items]="carouselItems"
-        [options]="{ autoplay: true }"
-        [template]="heroTemplate">
-      </lux-carousel>
+      <router-outlet></router-outlet>
 
-      <lux-section [highlight]="true">
-        <h2 class="text-center block">Disfruta de nuestros beneficios</h2>
-
-        <div class="gw sm-three-up block">
+      <lux-section>
+        <div class="gw sm-two-up md-four-up services">
           <div class="g">
-            <lux-callout
-              [size]="'md'"
-              [src]="'assets/images/luxury/buyers-protection.svg'"
-              [title]="'Protección al comprador'"
-              [text]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias error incidunt corporis? A rerum maiores nesciunt sunt recusandae provident aliquam harum, consectetur saepe! Porro voluptate modi eum est. Sapiente?'">
-            </lux-callout>
-          </div>
-          <div class="g">
-            <lux-callout
-              [size]="'md'"
-              [src]="'assets/images/luxury/worldwide-watches.svg'"
-              [title]="'Entregas a todo el país'"
-              [text]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias error incidunt corporis? A rerum maiores nesciunt sunt recusandae provident aliquam harum, consectetur saepe! Porro voluptate modi eum est. Sapiente?'">
-            </lux-callout>
-          </div>
-          <div class="g">
-            <lux-callout
-              [size]="'md'"
-              [src]="'assets/images/luxury/love-my-watch.svg'"
-              [title]="'Calidad garantizada'"
-              [text]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias error incidunt corporis? A rerum maiores nesciunt sunt recusandae provident aliquam harum, consectetur saepe! Porro voluptate modi eum est. Sapiente?'">
-            </lux-callout>
-          </div>
-        </div>
-
-        <article>
-          <a class="btn btn--secondary">Explorar catálogo</a>
-        </article>
-      </lux-section>
-
-      <lux-section>
-        <h2 class="text-center">Marcas populares</h2>
-
-        <div class="gw sm-two-up md-four-up block">
-          <div
-            class="g"
-            *ngFor="let thumbnail of thumbnails">
-            <lux-thumbnail
-              [src]="thumbnail.src"
-              [title]="thumbnail.title"
-              [text]="thumbnail.text"
-              (click)="log(thumbnail)">
-            </lux-thumbnail>
-          </div>
-        </div>
-
-        <article>
-          <a class="btn btn--secondary">Ver todas las marcas</a>
-        </article>
-      </lux-section>
-
-      <lux-section [highlight]="true">
-        <h2 class="text-center">Callouts</h2>
-
-        <div class="gw sm-two-up md-four-up">
-          <div
-            class="g"
-            *ngFor="let callout of callouts">
-            <lux-callout
-              [src]="callout.src"
-              [title]="callout.title"
-              [text]="callout.text">
-            </lux-callout>
-          </div>
-        </div>
-      </lux-section>
-
-      <!-- <lux-section>
-        <h2>Previews</h2>
-        <article>
-          <p>
-            Los <strong>previews</strong> son elementos visuales de la UI que permiten previsualizar algún tipo de contenido,
-            generalmente imágenes (de productos, por ejemplo).
-          </p>
-        </article>
-
-        <div class="gw sm-two-up lg-four-up">
-          <div class="g" *ngFor="let i of previews">
-            <lux-preview [size]="'sm'" [type]="i % 2 === 0 ? 'light' : ''">
-              Ejemplo de preview pequeño.
-              <br> Esta capa oculta opcional puede usarse para un llamado a la acción.
-              <br><br>
-              <button class="btn">Acción</button>
-            </lux-preview>
-          </div>
-        </div>
-      </lux-section>
-
-      <lux-section>
-        <h2>Botones</h2>
-        <button class="btn btn--small">Primario</button>
-        <button class="btn">Primario</button>
-        <button class="btn btn--secondary">Secundario</button>
-        <button class="btn btn--small btn--secondary">Secundario</button>
-      </lux-section>
-
-      <lux-section>
-        <h2>Alertas</h2>
-        <article>
-          <p>Las alertas son elementos de la UI que aportan información importante al usuario:</p>
-        </article>
-        <lux-alert *ngFor="let alert of alerts" [type]="alert.type" [fluid]="alert.fluid" [boldText]="alert.boldText" [text]="alert.text">
-        </lux-alert>
-      </lux-section>
-
-      <lux-section>
-        <article>
-          <h2>Modales</h2>
-          <p>Clic en el botón de abajo para ver una ventana modal en acción</p>
-        </article>
-        <button class="btn" (click)="modalHidden$.next(false)">Mostrar</button>
-        <lux-modal [hidden]="modalHidden$">
-          <div class="container">
-            <h2>Ejemplo de Ventana Modal</h2>
             <article>
+              <div class="img--icon">
+                <img
+                  class="img--natural"
+                  src="assets/images/luxury/services/01.png">
+              </div>
+              <h4>Envíos nacionales gratis</h4>
               <p>
-                Este es un buen ejemplo de como se verían las ventanas modales en una aplicación sencilla, haciendo uso de la pantalla completa
-                para atraer al usuario y captar su atención en el contenido que se le presenta.
-              </p>
-              <p>
-                Dado que la ventana modal se usa a modo de pantalla completa, hay que ser consciente de que su contenido debe ser realmente
-                importante y dependiente de las acciones del usuario para que este no sienta que es algo invasivo.
+                Hacemos envíos nacionales gratis para compras superiores a $200,000
               </p>
             </article>
           </div>
-        </lux-modal>
+          <div class="g">
+            <article>
+              <div class="img--icon">
+                <img
+                  class="img--natural"
+                  src="assets/images/luxury/services/02.png">
+              </div>
+              <h4>Garantía de devolución</h4>
+              <p>
+                Te regresamos tu dinero en 30 días hábiles gracias a nuestra garantía de devolución
+              </p>
+            </article>
+          </div>
+          <div class="g">
+            <article>
+              <div class="img--icon">
+                <img
+                  class="img--natural"
+                  src="assets/images/luxury/services/03.png">
+              </div>
+              <h4>Soporte al cliente 24/7</h4>
+              <p>
+                Te ayudamos en lo que necesites las 24 horas del día, 7 días a la semana
+              </p>
+            </article>
+          </div>
+          <div class="g">
+            <article>
+              <div class="img--icon">
+                <img
+                  class="img--natural"
+                  src="assets/images/luxury/services/04.png">
+              </div>
+              <h4>Pagos seguros</h4>
+              <p>
+                Paga seguro a través de nuestro sitio protegido bajo SSL / Certificado de Seguridad
+              </p>
+            </article>
+          </div>
+        </div>
       </lux-section>
 
       <lux-section>
-        <h2>Formularios</h2>
         <article>
+          <h2>Qué dicen nuestros clientes</h2>
           <p>
-            Los formularios son uno de los elementos más importantes en cualquier página web debido a que permiten al usuario interactuar
-            con la aplicación, generalmente proporcionando entradas de datos que serán posteriormente procesados por el sistema
-            con algún fin.
+            <strong>
+              <span class="number color--gold">9.5/10</span>
+            </strong>
           </p>
-          <p>
-            Su componente visual no es menos importante; en este tema se intenta crear formularios limpios, simples y concisos, acordes
-            con el diseño en general de los otros componentes y fáciles de llenar para el usuario final:
-          </p>
-
-          <div class="container">
-            <form class="form">
-              <legend>Ejemplo de Formulario de Petición</legend>
-              <div class="gw sm-two-up">
-                <div class="g">
-                  <fieldset>
-                    <article class="field">
-                      <input class="field__input" id="exampleInputA" type="text" required="required" placeholder="Su Nombre">
-                      <span class="field__feedback"></span>
-                      <span class="field__hint"></span>
-                    </article>
-                    <article class="field">
-                      <input class="field__input" id="exampleInput2" type="email" required="required" placeholder="Su Email">
-                      <span class="field__feedback"></span>
-                      <span class="field__hint">Proporcione una dirección de correo válida</span>
-                    </article>
-                  </fieldset>
-
-                  <fieldset>
-                    <article class="field">
-                      <label class="field__label">Tipo de solicitud</label>
-                      <div class="field__input-group">
-                        <label class="label--radio" for="submission-type-1"><input id="submission-type-1" name="submission-type"
-                            type="radio" value="pizza"> Queja</label>
-                        <label class="label--radio" for="submission-type-2"><input id="submission-type-2" name="submission-type"
-                            type="radio" value="tacos"> Reclamo</label>
-                        <label class="label--radio" for="submission-type-3"><input id="submission-type-3" name="submission-type"
-                            type="radio" value="burgers"> Sugerencia</label>
-                      </div>
-                      <span class="field__feedback"></span>
-                      <span class="field__hint"></span>
-                    </article>
-                  </fieldset>
-                </div>
-
-                <div class="g">
-                  <fieldset>
-                    <article class="field">
-                      <div class="field__select">
-                        <select name="schramburger">
-                          <option value="value-1">Seleccione ciudad</option>
-                          <option value="value-2">Medellín</option>
-                          <option value="value-3">Bucaramanga</option>
-                          <option value="value-4">Bogotá</option>
-                          <option value="value-5">Pereira</option>
-                          <option value="value-6">Cali</option>
-                          <option value="value-7">Barranquilla</option>
-                        </select>
-                      </div>
-                    </article>
-                  </fieldset>
-
-                  <fieldset>
-                    <article class="field">
-                      <textarea rows="8" class="field__input" placeholder="Cuerpo del mensaje"></textarea>
-                      <span class="field__feedback"></span>
-                      <span class="field__hint"></span>
-                    </article>
-                  </fieldset>
-                </div>
-
-                <div class="g clear">
-                  <footer class="form__actions--right">
-                    <input type="submit" class="btn btn--inline" value="Submit">
-                  </footer>
-                </div>
-              </div>
-            </form>
-          </div>
-
+          <span>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star_half</i>
+          </span>
         </article>
-      </lux-section> -->
+
+        <ng-template
+          let-item
+          #testimonial>
+          <div class="testimonial">
+            <article>
+              <h3>{{item.header}}</h3>
+              <p>"{{item.text}}"</p>
+              <h4>{{item.name}}</h4>
+            </article>
+          </div>
+        </ng-template>
+        <lux-carousel
+          [items]="testimonials"
+          [options]="{ autoplay: true }"
+          [template]="testimonial"
+          [theme]="'gold'">
+        </lux-carousel>
+      </lux-section>
     </lux-page>
   </lux-site-main>
   <lux-site-footer [sections]="footerInfo"></lux-site-footer>

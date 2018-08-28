@@ -1,0 +1,121 @@
+<ng-template
+  let-item
+  #heroTemplate>
+  <lux-hero
+    [opacity]="item.opacity"
+    [location]="'left center'"
+    [src]="item.src">
+    <div class="container">
+      <p>
+        <span
+          class="hero__leadin h1"
+          *ngIf="item.leadin">
+          {{item.leadin}}
+        </span>
+      </p>
+      <p class="h3">
+        <span *ngFor="let text of item.text">
+          {{text}}
+          <br>
+        </span>
+      </p>
+      <a
+        [routerLink]="item.href"
+        class="btn btn--gold h4"
+        *ngIf="item.action">
+        {{item.action}}
+      </a>
+    </div>
+  </lux-hero>
+</ng-template>
+<lux-carousel
+  [items]="banners"
+  [options]="{ autoplay: true }"
+  [template]="heroTemplate"
+  [theme]="'light'">
+</lux-carousel>
+
+<lux-section>
+  <h2 class="text-center">Marcas populares</h2>
+
+  <div class="gw sm-two-up md-four-up block">
+    <div
+      class="g"
+      *ngFor="let thumbnail of thumbnails">
+      <lux-thumbnail
+        [src]="thumbnail.src"
+        [title]="thumbnail.title"
+        [text]="thumbnail.text"
+        (click)="log(thumbnail)">
+      </lux-thumbnail>
+    </div>
+  </div>
+
+  <article>
+    <a class="btn">Ver todas las marcas</a>
+  </article>
+</lux-section>
+
+<lux-section>
+  <h2 class="text-center">Relojes para hombre</h2>
+
+  <div class="gw sm-two-up md-four-up">
+    <div
+      class="g"
+      *ngFor="let item of menPreviews">
+      <lux-preview
+        [item]="item"
+        (onShowDetails)="log(item)"></lux-preview>
+    </div>
+  </div>
+
+  <article>
+    <button class="btn">Quiero ver más</button>
+  </article>
+</lux-section>
+
+<lux-section>
+  <h2 class="text-center">Relojes para mujer</h2>
+
+  <div class="gw sm-two-up md-four-up">
+    <div
+      class="g"
+      *ngFor="let watch of womenPreviews">
+      <lux-preview
+        [item]="watch"
+        (onShowDetails)="log(item)"></lux-preview>
+    </div>
+  </div>
+
+  <article>
+    <button class="btn">Quiero ver más</button>
+  </article>
+</lux-section>
+
+<lux-section>
+  <article>
+    <h2>Lo más popular</h2>
+  </article>
+
+  <ng-template
+    let-item
+    #popular>
+    <div class="pd-3-b pd-2-l pd-2-r">
+      <div class="gw sm-two-up md-three-up">
+        <div
+          class="g"
+          *ngFor="let watch of item">
+          <lux-preview
+            [item]="watch"
+            (onShowDetails)="log(item)"></lux-preview>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <lux-carousel
+    [items]="populars"
+    [options]="{ autoplay: true }"
+    [template]="popular"
+    [theme]="'gold'">
+  </lux-carousel>
+</lux-section>

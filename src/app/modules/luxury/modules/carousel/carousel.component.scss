@@ -25,20 +25,32 @@
     z-index: 10;
     padding: 0 $unit;
     .carousel__circle {
-      width: $unit / 2;
-      height: $unit / 2;
+      width: $unit * 0.6;
+      height: $unit * 0.6;
       border-radius: 50%;
-      box-shadow: 0px 0px 5px $color__white;
       margin-left: $unit;
       margin-top: $unit;
       transition: 1s background ease;
       position: relative;
       cursor: pointer;
+      border: 1px solid $color__blue;
+      &.active {
+        background: $color__blue;
+      }
+      &.btn--white {
+        border: 1px solid $color__white;
+        &.active {
+          background: $color__white;
+        }
+      }
+      &.btn--gold {
+        border: 1px solid $color__gold;
+        &.active {
+          background: $color__gold;
+        }
+      }
       &:first-child {
         margin-left: 0;
-      }
-      &.active {
-        background: $color__white;
       }
       &::before {
         content: ' ';
@@ -60,10 +72,10 @@
     bottom: 0;
     margin: auto;
     &.left {
-      left: $unit;
+      left: $unit / 2;
     }
     &.right {
-      right: $unit;
+      right: $unit / 2;
     }
   }
 }

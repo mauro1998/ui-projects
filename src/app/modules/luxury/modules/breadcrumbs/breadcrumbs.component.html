@@ -1,0 +1,13 @@
+<lux-section [highlight]="true" [padding]="1">
+  <div class="space__between breadcrumbs">
+    <div class="breadcrumb__title">{{title}}</div>
+    <div class="breadcrumb__links">
+      <a
+        class="link h6"
+        [routerLink]="link.href"
+        *ngFor="let link of links; index as i">
+        {{(i > 0 && i < links.length) ? '/' : ''}} {{link.name}}
+      </a>
+    </div>
+  </div>
+</lux-section>

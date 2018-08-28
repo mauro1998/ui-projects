@@ -1,7 +1,52 @@
-<div class="preview" [ngClass]="getCSSClasses()">
-  <div class="preview__hidden-face">
-    <span>
-      <ng-content></ng-content>
-    </span>
+<a
+  class="preview__container"
+  (click)="showDetails($event)">
+  <div class="preview__content">
+    <h6
+      *ngIf="item.discount"
+      class="discount">
+      {{item.discount}}
+    </h6>
+    <img
+      class="preview__media"
+      src="{{item.src}}">
+    <div class="preview__info">
+      <p>
+        <strong>{{item.brand}}</strong>
+        {{item.ref}}
+      </p>
+    </div>
+    <div class="preview__price text-center">
+      <span
+        *ngIf="item.oldprice"
+        class="prev__price">
+        {{item.oldprice | currency:'COP':'$':'1.0-2'}}
+      </span>
+      <span class="actual__price">
+        {{item.price | currency:'COP':'$':'1.0-2'}}
+      </span>
+    </div>
+    <div class="preview__actions">
+      <button
+        class="btn btn--icon btn--transparent whish-list-btn"
+        (click)="toggleInWishList($event)"
+        [class.wish-listed]="item.inWishList">
+        <i
+          *ngIf="item.inWishList"
+          class="material-icons">
+          favorite
+        </i>
+        <i
+          *ngIf="!item.inWishList"
+          class="material-icons">
+          favorite_border
+        </i>
+      </button>
+      <button
+        class="btn btn--secondary btn--small"
+        (click)="toggleInCart($event)">
+        Lo quiero
+      </button>
+    </div>
   </div>
-</div>
+</a>

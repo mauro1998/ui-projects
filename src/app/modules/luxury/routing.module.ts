@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LuxuryComponent } from './luxury.component';
+import { LandingPageComponent } from './sample/landing-page/landing-page.component';
+import { CatalogComponent } from './sample/catalog/catalog.component';
 
-const routes: Routes = [{
-  path: '',
-  component: LuxuryComponent
-}];
+const routes: Routes = [
+  {
+    path: '',
+    component: LandingPageComponent
+  },
+  {
+    path: 'catalog',
+    component: CatalogComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

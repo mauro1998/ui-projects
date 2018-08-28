@@ -23,12 +23,14 @@
       class="carousel__circle"
       *ngFor="let item of items; let i = index"
       [class.active]="i === index"
-      (click)="showCustom(i)">
+      (click)="showCustom(i)"
+      [ngClass]="getTheme()">
     </div>
   </div>
 
   <button
-    class="btn btn--icon btn--white carousel__action left"
+    class="btn btn--icon carousel__action left"
+    [ngClass]="getTheme()"
     [@slide]="state$ | async"
     (click)="showPrevious()"
     [disabled]="isFirstItem">
@@ -36,7 +38,8 @@
   </button>
 
   <button
-    class="btn btn--icon btn--white carousel__action right"
+    class="btn btn--icon carousel__action right"
+    [ngClass]="getTheme()"
     [@slide]="state$ | async"
     (click)="showNext()"
     [disabled]="isLastItem">

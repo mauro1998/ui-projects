@@ -1,7 +1,12 @@
 import { Component, OnInit, Input, TemplateRef, ViewChildren, AfterViewInit, QueryList, ElementRef } from '@angular/core';
 import { trigger, transition, state, style, animate } from '@angular/animations';
-import 'rxjs/Rx';
-import { Subject, BehaviorSubject, Observable } from 'rxjs/Rx';
+import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import { interval } from 'rxjs/observable/interval';
+import 'rxjs/add/operator/combineLatest';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/throttleTime';
 
 const SLIDE = {
   NAME: 'slide',
@@ -41,6 +46,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   @Input() items = [];
   @Input() template: TemplateRef<any>;
   @Input() options: AnimationOptions = <AnimationOptions>{};
+  @Input() theme = '';
 
   @ViewChildren('templateItems') templateRefs: QueryList<ElementRef>;
 
@@ -85,8 +91,8 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   autoPlay() {
     if (!this.options.autoplay) return;
-    const interval = this.options.duration + this.options.autoplayInterval;
-    this.switch$.switchMap(() => Observable.interval(interval))
+    const timeInterval = this.options.duration + this.options.autoplayInterval;
+    this.switch$.switchMap(() => interval(timeInterval))
       .map(() => (this.index + 1) % this.items.length)
       .subscribe((index) => this.index$.next(index));
     this.switch$.next(true);
@@ -102,5 +108,17 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   get isLastItem() {
     return this.index === (this.items.length - 1);
+  }
+
+  getTheme() {
+    switch (this.theme) {
+      case 'light':
+        return 'btn--white'
+      case 'gold':
+        return 'btn--gold'
+      case 'blue':
+      default:
+        return ''
+    }
   }
 }

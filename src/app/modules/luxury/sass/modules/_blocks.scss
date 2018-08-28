@@ -12,32 +12,55 @@
   .pd-#{$i} {
     padding: $i*$unit;
   }
-
   .pd-#{$i}-l {
     padding-left: $i*$unit;
   }
-
   .pd-#{$i}-r {
     padding-right: $i*$unit;
   }
-
   .pd-#{$i}-lr {
     padding-left: $i*$unit;
     padding-right: $i*$unit;
   }
-
   .pd-#{$i}-t {
     padding-top: $i*$unit;
   }
-
   .pd-#{$i}-b {
     padding-bottom: $i*$unit;
   }
-
   .pd-#{$i}-tb {
     padding-top: $i*$unit;
     padding-bottom: $i*$unit;
   }
+  .mg-#{$i} {
+    margin: $i*$unit;
+  }
+  .mg-#{$i}-l {
+    margin-left: $i*$unit;
+  }
+  .mg-#{$i}-r {
+    margin-right: $i*$unit;
+  }
+  .mg-#{$i}-lr {
+    margin-left: $i*$unit;
+    margin-right: $i*$unit;
+  }
+  .mg-#{$i}-t {
+    margin-top: $i*$unit;
+  }
+  .mg-#{$i}-b {
+    margin-bottom: $i*$unit;
+  }
+  .mg-#{$i}-tb {
+    margin-top: $i*$unit;
+    margin-bottom: $i*$unit;
+  }
+}
+
+.panel {
+  border: 1px solid #DEDDE9;
+  border-radius: 5px;
+  background: $color__white;
 }
 
 .clearfix {

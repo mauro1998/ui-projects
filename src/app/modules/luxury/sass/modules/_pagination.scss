@@ -1,0 +1,40 @@
+.pagination__container {
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: $unit;
+  .action {
+    padding: .3em;
+  }
+  .pagination__items {
+    display: flex;
+    align-items: center;
+    span.ellipsis {
+      margin: 0 .4em;
+    }
+  }
+  .pagination__item {
+    position: relative;
+    margin-right: .4em;
+    &:last-child {
+      margin-right: 0;
+    }
+    span {
+      display: block;
+    }
+    &.btn--page {
+      color: $color__navy;
+      border-color: transparent;
+      &:hover {
+        background: rgba($color__grey, .2);
+        border-color: $color__grey--light;
+      }
+      &:active {
+        background-image: linear-gradient(to bottom, $color__blue, #0863b8);
+        border-color: $color__blue;
+        color: $color__white;
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+<lux-section
+  [highlight]="false"
+  [fluid]="false">
+  <div class="catalog__container">
+    <div class="filters__section hide__md">
+      <lux-catalog-filters></lux-catalog-filters>
+    </div>
+    <div
+      class="products__section"
+      #productContainer>
+      <lux-pagination
+        [items]="watches.length"
+        [itemsOnPage]="itemsOnPage"
+        [active]="activePage"
+        (onPageChange)="onPageChange($event)"></lux-pagination>
+      <div class="space__between mg-1-b">
+        <div class="group">
+          <h5>Ordenar por:</h5>
+          <select class="input--small">
+            <option value>Popularidad</option>
+            <option value>Precio mayor - menor</option>
+            <option value>Precio menor - mayor</option>
+            <option value>Más reciente</option>
+            <option value>Más antiguo</option>
+          </select>
+        </div>
+        <div class="group">
+          <span class="mg-1-r">{{itemsOnPageMessage}}</span>
+          <button class="btn btn--small btn--secondary">Quitar filtros</button>
+        </div>
+      </div>
+      <div
+        class="gw"
+        [ngClass]="grid$ | async">
+        <div
+          class="g"
+          #gridItem
+          *ngFor="let watch of watchesOnPage">
+          <lux-preview
+            [item]="watch"
+            (onShowDetails)="log(watch)"></lux-preview>
+        </div>
+      </div>
+      <lux-pagination
+        [items]="watches.length"
+        [itemsOnPage]="itemsOnPage"
+        [active]="activePage"
+        (onPageChange)="onPageChange($event)"></lux-pagination>
+    </div>
+  </div>
+</lux-section>

@@ -18,6 +18,6 @@ $container__max-width: 70em;
   max-width: $breakpoint__xxl;
   padding: 0 1.5*$unit;
   @include bp-at-least($breakpoint__sm) {
-    padding: 0 3*$unit;
+    padding: 0 2*$unit;
   }
 }

@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,400,700');
-
-$sans: 'IBM Plex Sans', sans-serif;
-
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Open+Sans:400,600');
+$sans: 'Quicksand', 'Open Sans', sans-serif;
 %sans--light {
   font-family: $sans;
   font-weight: 100;

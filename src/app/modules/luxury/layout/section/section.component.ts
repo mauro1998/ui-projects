@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SectionComponent implements OnInit {
   @Input() highlight: boolean = false;
   @Input() fluid: boolean = false;
+  @Input() padding: number;
 
   constructor() { }
 

@@ -10,7 +10,9 @@
   }
 }
 
-.thumbnail__media {}
+.thumbnail__media {
+  @extend .panel;
+}
 
 .thumbnail__caption {
   font-size: 85%;

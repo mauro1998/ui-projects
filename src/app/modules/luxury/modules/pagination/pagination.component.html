@@ -1,0 +1,58 @@
+<div class="pagination__container">
+  <div class="pagination__items">
+    <div class="left">
+      <button
+        *ngFor="let page of left"
+        class="btn btn--small pagination__item"
+        [class.btn--secondary]="page !== active"
+        [class.btn--page]="page !== active"
+        (click)="changePage(page)">
+        <span>{{page}}</span>
+      </button>
+    </div>
+    <span
+      *ngIf="center.length"
+      class="ellipsis">
+      ...
+    </span>
+    <div class="center">
+      <button
+        *ngFor="let page of center"
+        class="btn btn--small pagination__item"
+        [class.btn--secondary]="page !== active"
+        [class.btn--page]="page !== active"
+        (click)="changePage(page)">
+        <span>{{page}}</span>
+      </button>
+    </div>
+    <span
+      *ngIf="right.length"
+      class="ellipsis">
+      ...
+    </span>
+    <div class="right">
+      <button
+        *ngFor="let page of right"
+        class="btn btn--small pagination__item"
+        [class.btn--secondary]="page !== active"
+        [class.btn--page]="page !== active"
+        (click)="changePage(page)">
+        <span>{{page}}</span>
+      </button>
+    </div>
+  </div>
+  <div class="pagination__actions">
+    <button
+      class="btn btn--small btn--secondary action"
+      (click)="changePage(active - 1)"
+      [disabled]="disablePrev">
+      <i class="material-icons">chevron_left</i>
+    </button>
+    <button
+      class="btn btn--small btn--secondary action"
+      (click)="changePage(active + 1)"
+      [disabled]="disableNext">
+      <i class="material-icons">chevron_right</i>
+    </button>
+  </div>
+</div>
