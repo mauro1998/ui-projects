@@ -48,14 +48,6 @@
     }
     .preview__actions {
       text-align: center;
-      .whish-list-btn {
-        position: absolute;
-        bottom: $unit*1.1;
-        left: $unit;
-      }
-      .wish-listed {
-        color: $color__gold !important;
-      }
       .btn--icon {
         color: $color__grey;
         &:hover {
@@ -68,3 +60,4 @@
     }
   }
 }
+

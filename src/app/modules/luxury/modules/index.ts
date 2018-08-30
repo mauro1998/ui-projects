@@ -9,6 +9,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { InputRangeComponent } from './input-range/input-range.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { ProductComponent } from './product/product.component';
 
 export default [
   AlertComponent,
@@ -22,4 +23,5 @@ export default [
   PaginationComponent,
   InputRangeComponent,
   BreadcrumbsComponent,
+  ProductComponent,
 ];

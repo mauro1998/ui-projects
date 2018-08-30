@@ -1,49 +1,84 @@
-// H1
-h1, .h1 {
-  font-size: 2em;
-  margin-bottom: 1em;
+.heading {
   text-transform: uppercase;
   @extend %sans--bold;
+}
+
+.h1__size {
+  font-size: 2em;
+  @extend .heading;
+}
+
+// H1
+h1,
+.h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  @extend .heading;
+}
+
+.h2__size {
+  font-size: 1.5em;
+  @extend .heading;
 }
 
 // H2
-h2, .h2 {
+h2,
+.h2 {
   font-size: 1.5em;
   margin-bottom: 1em;
-  text-transform: uppercase;
-  @extend %sans--bold;
+  @extend .heading;
+}
+
+.h3__size {
+  font-size: 1.3em;
+  @extend .heading;
 }
 
 // H3
-h3, .h3 {
+h3,
+.h3 {
   font-size: 1.3em;
   margin-bottom: 1em;
-  text-transform: uppercase;
-  @extend %sans--bold;
+  @extend .heading;
+}
+
+.h4__size {
+  font-size: 1em;
+  @extend .heading;
 }
 
 // H4
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1em;
   margin-bottom: 1em;
-  text-transform: uppercase;
-  @extend %sans--bold;
+  @extend .heading;
+}
+
+.h5__size {
+  font-size: 0.8em;
+  @extend .heading;
 }
 
 // H5
-h5, .h5 {
+h5,
+.h5 {
   font-size: 0.8em;
   margin-bottom: 1em;
-  text-transform: uppercase;
-  @extend %sans--bold;
+  @extend .heading;
+}
+
+.h6__size {
+  font-size: 0.7em;
+  @extend .heading;
 }
 
 // H6
-h6, .h6 {
+h6,
+.h6 {
   font-size: 0.7em;
   margin-bottom: 1em;
-  text-transform: uppercase;
-  @extend %sans--bold;
+  @extend .heading;
 }
 
 .color--gold {

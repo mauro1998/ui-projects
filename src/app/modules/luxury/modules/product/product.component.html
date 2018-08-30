@@ -1,0 +1,133 @@
+<lux-section>
+  <div
+    class="product__wrapper"
+    *ngIf="watch">
+    <div class="gw md-two-up">
+      <div class="g">
+        <div class="product">
+          <div class="product__display">
+            <div class="top__label">
+              <h5>{{watch.discount}}</h5>
+            </div>
+            <ng-template
+              let-item
+              #template>
+              <div class="product__slide">
+                <img
+                  src="{{item}}"
+                  draggable="false">
+              </div>
+            </ng-template>
+            <lux-carousel
+              [items]="watch.thumbnails"
+              [template]="template"
+              [theme]="'gold'">
+            </lux-carousel>
+            <div class="product__display--gallery">
+              <div
+                class="product__display small"
+                *ngFor="let thumbnail of watch.thumbnails">
+                <img
+                  src="{{thumbnail}}"
+                  draggable="false">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="g">
+        <div class="product__info">
+          <h4 class="color--gold">{{watch.brand}}</h4>
+          <h3 class="ref">{{watch.ref}}</h3>
+          <div class="price">
+            <span
+              class="old"
+              *ngIf="watch.oldprice">
+              {{watch.oldprice | currency:'COP':'$':'1.0-2'}}
+            </span>
+            <span class="current">
+              {{watch.price | currency:'COP':'$':'1.0-2'}}
+            </span>
+          </div>
+          <p class="text mg-1-t">{{watch.description}}</p>
+          <div class="space__between">
+            <div class="group mg-1-b nowrap">
+              <span class="h5__size">Color:</span>
+              <select class="input--small mg-1-l">
+                <option value="1">azul</option>
+                <option value="2">amarillo</option>
+                <option value="3">purpura</option>
+              </select>
+            </div>
+            <div class="group mg-1-b nowrap">
+              <span class="h5__size">Cantidad:</span>
+              <select class="input--small mg-1-l">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+          <div class="clearfix text">
+            <strong>Categorías:</strong>
+            <a class="link">Hombre</a>
+            ,
+            <a class="link">Deportivo</a>
+            ,
+            <a class="link">Análogo</a>
+          </div>
+        </div>
+        <div class="product__actions mg-1-t">
+          <div class="space__between">
+            <div class="group mg-1-b text">
+              <span>Share:</span>
+              <div class="group">
+                <a class="btn btn--icon btn--transparent shape-circle social-btn">
+                  <i class="socicon-facebook"></i>
+                </a>
+                <a class="btn btn--icon btn--transparent shape-circle social-btn">
+                  <i class="socicon-twitter"></i>
+                </a>
+                <a class="btn btn--icon btn--transparent shape-circle social-btn">
+                  <i class="socicon-instagram"></i>
+                </a>
+                <a class="btn btn--icon btn--transparent shape-circle social-btn">
+                  <i class="socicon-pinterest"></i>
+                </a>
+              </div>
+            </div>
+            <div class="group mg-1-b">
+              <button
+                class="btn btn--icon btn--transparent whish-list-btn"
+                [class.wish-listed]="watch.inWishList">
+                <i
+                  *ngIf="watch.inWishList"
+                  class="material-icons">
+                  favorite
+                </i>
+                <i
+                  *ngIf="!watch.inWishList"
+                  class="material-icons">
+                  favorite_border
+                </i>
+              </button>
+              <button class="btn btn--small">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</lux-section>
+
+<lux-section>
+  <div class="gw four-up">
+    <div
+      class="g"
+      *ngFor="let watch of watches">
+      <lux-preview [item]="watch"></lux-preview>
+    </div>
+  </div>
+</lux-section>

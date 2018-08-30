@@ -139,6 +139,33 @@ button {
   font-size: 1em;
   border-radius: 50%;
   padding: 0;
+  &.shape-circle {
+    width: $unit*2;
+    height: $unit*2;
+    border: 1px solid $color__border;
+    position: relative;
+    i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 1em;
+      height: 1em;
+      margin: auto;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid $color__border;
+    }
+    &:hover {
+      background: rgba($color__grey, .05);
+    }
+    &:active {
+      background: rgba($color__grey, .1);
+    }
+  }
 }
 
 .btn.btn--transparent {

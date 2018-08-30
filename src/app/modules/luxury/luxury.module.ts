@@ -10,6 +10,8 @@ import containers from './containers';
 import layout from './layout';
 import modules from './modules';
 import { CatalogFiltersComponent } from './sample/catalog-filters/catalog-filters.component';
+import { NotFoundComponent } from './sample/not-found/not-found.component';
+import { WatchService } from './services/watch.service';
 
 const components = [
   ...containers,
@@ -19,6 +21,7 @@ const components = [
   LandingPageComponent,
   CatalogComponent,
   CatalogFiltersComponent,
+  NotFoundComponent,
 ];
 
 @NgModule({
@@ -26,6 +29,9 @@ const components = [
     CommonModule,
     RoutingModule,
     BrowserAnimationsModule,
+  ],
+  providers: [
+    WatchService
   ],
   declarations: components,
   exports: components,

@@ -2,11 +2,14 @@ export default class Watch {
   public discount: string;
 
   constructor(
+    public id: string,
     public src: string,
     public brand: string,
     public ref: string,
+    public description: string,
     public oldprice: number,
     public price: number = 0,
+    public thumbnails: string[],
     public inWishList = false,
     public inCart = false,
   ) {

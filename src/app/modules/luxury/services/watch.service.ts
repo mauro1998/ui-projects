@@ -10,6 +10,10 @@ export class WatchService {
   private women = [];
   private maxMen = 11;
   private maxWomen = 16;
+  private desc: string;
+  private menWatches: Watch[];
+  private womenWatches: Watch[];
+  private stock = 1000;
 
   constructor() {
     for (let i = 1; i <= this.maxMen; i++) {
@@ -33,40 +37,66 @@ export class WatchService {
       'Seamaster Planet Ocean 600M Automatic Chronometer',
       'Black Dial Black Leather Watch T1014511605100',
     ];
+
+    this.desc = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam labore molestias sit. Non, cum. Tenetur nesciunt excepturi, fugiat, omnis assumenda tempore non iure placeat blanditiis harum iste dolores aspernatur animi?';
+
+    this.menWatches = [];
+
+    for (let i = 0; i < this.stock / 2; i++) {
+      const min = 100000;
+      const oldprice = rand(shuffle([true, false])) ? null : range(min, 1000000);
+      const price = range(min, oldprice);
+      const src = rand(this.men);
+      const thumbnails = [];
+
+      for (let i = 0; i < range(2, 8); i++) {
+        thumbnails.push(src);
+      }
+
+      this.menWatches.push(new Watch(
+        `${i}-${Date.now().toString(16)}`,
+        src,
+        rand(this.brands),
+        rand(this.refs),
+        this.desc,
+        oldprice,
+        price,
+        thumbnails
+      ));
+    }
+
+    this.womenWatches = [];
+
+    for (let i = 0; i < this.stock / 2; i++) {
+      const min = 100000;
+      const oldprice = rand(shuffle([true, false])) ? null : range(min, 1000000);
+      const price = range(min, oldprice);
+      const src = rand(this.women);
+      const thumbnails = [];
+
+      for (let i = 0; i < range(2, 8); i++) {
+        thumbnails.push(src);
+      }
+
+      this.womenWatches.push(new Watch(
+        `${i}-${Date.now().toString(16)}`,
+        src,
+        rand(this.brands),
+        rand(this.refs),
+        this.desc,
+        oldprice,
+        price,
+        thumbnails
+      ));
+    }
   }
 
   getRandomMenWatches(quantity = 8): Watch[] {
-    const watches = [];
-
-    for (let i = 0; i < quantity; i++) {
-      const min = 100000;
-      const oldprice = rand(shuffle([true, false])) ? null : range(min, 1000000);
-      const price = range(min, oldprice);
-      watches.push(new Watch(
-        rand(this.men),
-        rand(this.brands),
-        rand(this.refs), oldprice, price
-      ));
-    }
-
-    return watches;
+    return shuffle(this.menWatches).slice(0, quantity);
   }
 
   getRandomWomenWatches(quantity = 8): Watch[] {
-    const watches = [];
-
-    for (let i = 0; i < quantity; i++) {
-      const min = 100000;
-      const oldprice = rand(shuffle([true, false])) ? null : range(min, 1000000);
-      const price = range(min, oldprice);
-      watches.push(new Watch(
-        rand(this.women),
-        rand(this.brands),
-        rand(this.refs), oldprice, price
-      ));
-    }
-
-    return watches;
+    return shuffle(this.menWatches).slice(0, quantity);
   }
 
   getRandomPopularWatches(): Watch[][] {
@@ -96,6 +126,7 @@ export class WatchService {
       case 'all':
       default:
         const qty = quantity ? Math.floor(quantity / 2) : null;
+        console.log(qty);
         return shuffle([
           ...this.getRandomMenWatches(qty || 20),
           ...this.getRandomWomenWatches(qty ? qty + Math.floor(quantity % 2) : null || 20),
@@ -103,4 +134,10 @@ export class WatchService {
     }
   }
 
+  fetchById(id): Watch {
+    return [
+      ...this.menWatches,
+      ...this.womenWatches
+    ].find((watch: Watch) => watch.id === id);
+  }
 }

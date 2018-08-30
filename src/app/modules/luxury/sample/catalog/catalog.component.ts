@@ -17,9 +17,6 @@ import Watch from '../../services/watch.class';
   selector: 'lux-catalog',
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss'],
-  providers: [
-    WatchService,
-  ]
 })
 export class CatalogComponent implements OnInit, AfterViewInit, AfterViewChecked {
   @ViewChild('productContainer') productContainer: ElementRef;

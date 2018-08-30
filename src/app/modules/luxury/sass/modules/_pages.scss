@@ -31,3 +31,12 @@ section {
   justify-content: space-between;
   align-items: center;
 }
+
+.group {
+  display: flex;
+  align-items: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}

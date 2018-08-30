@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import Watch from '../../services/watch.class';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'lux-preview',
@@ -8,16 +9,17 @@ import Watch from '../../services/watch.class';
 })
 export class PreviewComponent implements OnInit {
   @Input() item: Watch;
-  @Output() onShowDetails = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private _router: Router
+  ) { }
 
   ngOnInit() {
 
   }
 
   showDetails() {
-    this.onShowDetails.emit();
+    this._router.navigate(['product', this.item.id]);
   }
 
   toggleInWishList(e) {
