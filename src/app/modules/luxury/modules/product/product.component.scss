@@ -15,6 +15,14 @@
     margin-bottom: $unit;
     padding: $unit*.5;
     padding-bottom: $unit*.5;
+    cursor: pointer;
+    &:hover {
+      opacity: .8;
+    }
+    &.active {
+      border-color: $color__gold;
+      opacity: 1;
+    }
   }
 }
 

@@ -19,6 +19,7 @@
               </div>
             </ng-template>
             <lux-carousel
+              #carousel
               [items]="watch.thumbnails"
               [template]="template"
               [theme]="'gold'">
@@ -26,7 +27,9 @@
             <div class="product__display--gallery">
               <div
                 class="product__display small"
-                *ngFor="let thumbnail of watch.thumbnails">
+                *ngFor="let thumbnail of watch.thumbnails; index as i"
+                (click)="carousel.showCustom(i)"
+                [class.active]="carousel.index === i">
                 <img
                   src="{{thumbnail}}"
                   draggable="false">
@@ -101,7 +104,8 @@
             <div class="group mg-1-b">
               <button
                 class="btn btn--icon btn--transparent whish-list-btn"
-                [class.wish-listed]="watch.inWishList">
+                [class.wish-listed]="watch.inWishList"
+                (click)="watch.toggleInWishList()">
                 <i
                   *ngIf="watch.inWishList"
                   class="material-icons">
@@ -123,7 +127,8 @@
 </lux-section>
 
 <lux-section>
-  <div class="gw four-up">
+  <h2 class="text-center">También podría gustarte</h2>
+  <div class="gw sm-two-up md-three-up xl-four-up">
     <div
       class="g"
       *ngFor="let watch of watches">

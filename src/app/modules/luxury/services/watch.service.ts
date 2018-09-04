@@ -126,7 +126,6 @@ export class WatchService {
       case 'all':
       default:
         const qty = quantity ? Math.floor(quantity / 2) : null;
-        console.log(qty);
         return shuffle([
           ...this.getRandomMenWatches(qty || 20),
           ...this.getRandomWomenWatches(qty ? qty + Math.floor(quantity % 2) : null || 20),
